@@ -20,7 +20,7 @@ Omega = omega * [0,-1:-1:floor(-N/2),floor(N/2-1):-1:1]';
 X = F ./ (1 + i * Omega - Omega.^2); % Solution in frequency domain
 x = ifft(X);
 
-xAnalytical = -0.1667 * sin(2*t) - 0.25 * cos(2*t);
+xAnalytical = -0.23077 * sin(2*t) -0.15385 * cos(2*t);
 figure,
 plot(t, x, 'k', ...
        t , xAnalytical, 'r--',...
