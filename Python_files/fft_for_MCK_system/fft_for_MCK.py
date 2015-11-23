@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 # print(np.round(np.fft.fft(np.cos(t))))
 
 # # \ddot{x} + x = \sin(2t)
-N = 99
+N = 9
 t = np.linspace(0, 2*np.pi, N+1)
 t = t[0:-1]
 f = np.sin(2*t)
@@ -36,7 +36,7 @@ plt.xlabel('Time')
 plt.ylabel('% Error')
 # plt.show()
 
-# # \ddot{x} + x = \sin(2t)
+# # \ddot{x} + \dot{x} + x = \sin(2t)
 N = 99
 t = np.linspace(0, 2*np.pi, N+1)
 t = t[0:-1]
