@@ -29,11 +29,13 @@ from scipy.integrate import odeint
 
 # # \ddot{x} + \dot{x} + x = sin(2*t)
 N = 19
-t = np.linspace(0, 2*np.pi, N+1)
+T = 2*np.pi
+# t = np.linspace(0, 2*np.pi, N+1)
+t = np.linspace(0, T, N+1)
 t = t[0:-1]
 f = np.sin(2*t)
 F = np.fft.fft(f)
-Omega = np.fft.fftfreq(N, 1/N) + 0.00001
+Omega = np.fft.fftfreq(N, T/(2*np.pi*N))# + 0.00001
 x0 = np.ones(N)
 # x0 = f
 xAnalytical = -0.23077 * np.sin(2*t) -0.15385 * np.cos(2*t)
