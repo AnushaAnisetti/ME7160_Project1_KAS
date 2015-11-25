@@ -6,7 +6,7 @@ from scipy.integrate import odeint
 
 # # --------------------------------------------------------------------------------------------------------------------
 # # \ddot{x} + x = sin(2*t)
-# N = 9
+# N = 19
 # T = 2*np.pi
 # t = np.linspace(0, T, N+1)
 # t = t[0:-1]
@@ -63,9 +63,56 @@ from scipy.integrate import odeint
 # # print(res.jac)
 
 # # --------------------------------------------------------------------------------------------------------------------
-# # \ddot{x} + \dot{x} + x - x**3 = sin(2*t)
+# # # \ddot{x} + \dot{x} + x - x**3 = sin(2*t)
+# N = 199
+# T = 4*2*np.pi
+# t = np.linspace(0, T, N+1)
+# t = t[0:-1]
+# f = np.sin(2*t)
+# F = np.fft.fft(f)
+# Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
+# x0 = np.zeros(N)
+#
+# def residual(x):
+#     X = np.fft.fft(x)
+#     ddx = np.fft.ifft(np.multiply(-Omega**2, X))
+#     dx = np.fft.ifft(np.multiply(1j * Omega, X))
+#     R = ddx + dx + x - x**3 - f
+#     R = np.sum(np.abs((R**2)))
+#     return R
+#
+# # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
+# res = minimize(residual, x0)
+# xSol = res.x
+#
+# # Numerical solution
+# def RHS(X, t=0.0):
+#     x1, x2 = X
+#     x1dot = x2
+#     x2dot = -x1 - x2 + x1**3 + np.sin(2*t)
+#     return [x1dot, x2dot]
+#
+# ta = np.linspace(0.0, T, N)
+# sol = odeint(RHS, [0, 0], ta)
+# plt.figure()
+# plt.plot(t, res.x, 'k',
+#          ta, sol[:, 0], 'r')
+# plt.legend(['Harmonic Balance', 'Time integration'])
+# plt.xlabel('Time')
+# plt.ylabel('Displacement')
+# plt.show()
+
+# # --------------------------------------------------------------------------------------------------------------------
+# # \ddot{x} + 2 * mu * \dot{x} + g / R * sin(x) - \alpha^2 * sin(x) * cos(x) = sin(2*t)
+# # Problem 2.45 on page 140 of Applied Nonlinear Dynamics: Analytical, Computational, and Experimental Methods (Nayfeh)
+# # Define system properties
+mu = 0.1
+g = 9.81
+R = 1.0
+alpha = 1.0
+
 N = 199
-T = 4*2*np.pi
+T = 8*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
 f = np.sin(2*t)
@@ -77,9 +124,9 @@ def residual(x):
     X = np.fft.fft(x)
     ddx = np.fft.ifft(np.multiply(-Omega**2, X))
     dx = np.fft.ifft(np.multiply(1j * Omega, X))
-    R = ddx + dx + x - x**3 - f
-    R = np.sum(np.abs((R**2)))
-    return R
+    Residual = ddx + 2 * mu * dx + g / R * np.sin(x) - alpha**2 * np.sin(x) * np.cos(x) - f
+    Residual = np.sum(np.abs((Residual**2)))
+    return Residual
 
 # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
 res = minimize(residual, x0)
@@ -89,7 +136,7 @@ xSol = res.x
 def RHS(X, t=0.0):
     x1, x2 = X
     x1dot = x2
-    x2dot = -x1 - x2 + x1**3 + np.sin(2*t)
+    x2dot = -2 * mu * x2 - g / R * np.sin(x1) + alpha**2 * np.sin(x1) * np.cos(x1) + np.sin(2*t)
     return [x1dot, x2dot]
 
 ta = np.linspace(0.0, T, N)
