@@ -13,8 +13,8 @@
 %title and author details
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
-\author[1]{Anusha Anisetti}
-\author[1]{Vana Naga Samyuktha Nuthy}
+\author[1]{(Add your name)}
+\author[1]{(Add your name)}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
 
@@ -24,7 +24,26 @@
 
 \abstract{}
 % ===================================================================
-\section{Numerical Method}
+\section{Remonstration Results}
+\subsection{Linear MCK System}
+
+\begin{equation}
+	\ddot{x} + \dot{x} + x = \sin 2t
+\end{equation}
+
+\subsection{Nonlinear Oscilator}
+(Problem 2.45 on page 140 of Applied Nonlinear Dynamics: Analytical, Computational, and Experimental Methods (Nayfeh))
+\begin{equation}
+	\ddot{x} + 2 \mu \dot{x} + \frac{g}{R} \sin x - \alpha^2 \sin x \cos x = \sin 2t
+\end{equation}
+
+\subsection{Parametrically excited Duffing Oscillator}
+
+\begin{equation}
+	\ddot{x} + x + \epsilon \left[ 2 \mu \dot{x} + \alpha x^3 + 2 k x \cos \omega t \right] = \sin 2t	
+\end{equation}
+
+\subsection{Hypersonic Flutter}
 The governing equation can be written as
 
 \begin{equation}\label{eq:GE}
@@ -76,7 +95,7 @@ By expanding Equation \eqref{eq:pistonTheory}, and substituting for $Z(x,t)$ fro
 \end{gather}\label{eq:GEfull}
 \end{subequations}
 
-Equation \eqref{eq:GEfull} needs to be solved for $\theta$
+Equation \eqref{eq:GEfull} needs to be solved for $\theta$ using Harmonic Balance method.
 % ===================================================================
 \bibliographystyle{unsrt}
 \bibliography{ref}
