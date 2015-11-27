@@ -10,7 +10,7 @@ from scipy.integrate import odeint
 gs.wedge(theta = 10, thetaDot = 1)
 [Fx, Fy, Mz] = aero.calcLoad()
 
-N = 5
+N = 9
 T = 2*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
@@ -23,7 +23,10 @@ def residual(x):
     ddx = np.fft.ifft(np.multiply(-Omega**2, X))
     f = np.zeros(N)
     for ix in range(0, len(x)):
-        gs.wedge(theta = x[ix], thetaDot = dx[ix])
+        if np.imag(x[ix]) > 1e-3 or np.imag(dx[ix]) > 1e-3:
+            np.disp('You have a problem with imaginary numbers!')
+            np.disp([np.imag(x[ix]), np.imag(dx[ix])])
+        gs.wedge(theta=np.real(x[ix]), thetaDot=np.real(dx[ix]))
         [Fx, Fy, Mz] = aero.calcLoad()
         f[ix] = Mz
     Residual = ddx + 100 * x - Mz
@@ -35,3 +38,10 @@ res = minimize(residual, x0)
 xSol = res.x
 print(xSol)
 print(residual(xSol))
+
+# plt.figure()
+# plt.plot(t, xSol, 'k')
+# plt.legend(['Harmonic Balance'])
+# plt.xlabel('Time')
+# plt.ylabel('Displacement')
+# plt.show()
