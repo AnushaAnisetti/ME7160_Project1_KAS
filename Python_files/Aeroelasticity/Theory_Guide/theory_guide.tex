@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper]{extarticle}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+	}
+\usepackage{graphicx, float} % For figures
+\usepackage{authblk}
+\usepackage{amsmath}
+
+%title and author details
+\title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
+\author[1]{Koorosh Gobal}
+\author[1]{Anusha Anisetti}
+\author[1]{Vana Naga Samyuktha Nuthy}
+\affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
+\date{} %remove date
+
+\begin{document}
+
+\maketitle
+
+\abstract{}
+% ===================================================================
+\section{Numerical Method}
+The governing equation can be written as
+
+\begin{equation}\label{eq:GE}
+	m\ddot{\theta} + k \theta = f(\theta, t)
+\end{equation}
+
+where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. The pressure distribution on the airfoil can be written as follows
+
+\begin{equation}\label{eq:pistonTheory}
+	\frac{P(x, t)}{P_\infty} = \left( 1+ \frac{\gamma - 1}{2} \frac{v_n}{a_\infty} \right)^{\frac{2 \gamma}{\gamma - 1}}
+\end{equation}
+
+where $P(x, t)$ is the pressure at point $x$ on the airfoil, $P_\infty$ is the free stream pressure, $\gamma$ is the ratio of specific heats and $a_\infty$ is the speed of sound. $v_n$ is calculated using the following equation.
+
+\begin{equation}\label{eq:definitionOfVn}
+	v_n = \frac{\partial Z(x,t)}{\partial t} + V \frac{\partial Z(x,t)}{\partial x}
+\end{equation}
+
+where $V$ is the free stream velocity and $Z(x,t)$ is the position of airfoil surface. The position of airfoil surface can be related to the angle of attack using the following equation:
+
+\begin{equation}\label{eq:definitionOfZ}
+	Z(x,t) = M_r\left( \theta(t) \right) Z_0(x)
+\end{equation}
+
+where $M_r$ is the rotation matrix, and $Z_0(x)$ is the initial shape of the airfoil.  As can be seen here, the location of surface at time $t$ only depends on the angle of attach at that time, $\theta(t)$. The rotation matrix is defined as
+
+\begin{equation*}
+	M_r = 
+	\begin{bmatrix}
+		\cos \theta & -\sin \theta \\
+		\sin \theta & \cos \theta
+	\end{bmatrix}
+\end{equation*}
+
+By expanding Equation \eqref{eq:pistonTheory}, and substituting for $Z(x,t)$ from Equation \eqref{eq:definitionOfZ}, Equation \eqref{eq:GE} can be rewritten as
+
+\begin{subequations}
+\begin{gather}
+	m\ddot{\theta} + k \theta = 
+	\oint_{airfoil} P_\infty
+	\left[
+	\gamma \frac{v_n}{a_\infty} +
+	\frac{\gamma (\gamma + 1)}{4} \left( \frac{v_n}{a_\infty}\right)^2 +
+	1
+	\right] ds
+	\\
+	v_n = 
+	\frac{\partial M_r(\theta)}{\partial t}Z_0(x) + V M_r(\theta)\frac{\partial Z_0(x)}{\partial x}
+\end{gather}\label{eq:GEfull}
+\end{subequations}
+
+Equation \eqref{eq:GEfull} needs to be solved for $\theta$
+% ===================================================================
+\bibliographystyle{unsrt}
+\bibliography{ref}
+\end{document}
