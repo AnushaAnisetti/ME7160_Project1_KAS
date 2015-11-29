@@ -46,8 +46,7 @@
 Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
 for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
 
-In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. 
-}
+In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
 \section{Demonstration Results}
 \subsection{Linear MCK System}
 
@@ -67,8 +66,9 @@ In this report, Harmonic balance methodology is first build on closed form equat
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
+{Linear oscillating system response attained using Harmonic Balance Method (HBM), coincides well with the analytical solution.}
 
-\subsection{Nonlinear Oscilator}
+\subsection{Nonlinear Oscillator}
 (Problem 2.45 on page 140 of Applied Nonlinear Dynamics: Analytical, Computational, and Experimental Methods (Nayfeh))
 \begin{equation}
 	\ddot{x} + 2 \mu \dot{x} + \frac{g}{R} \sin x - \alpha^2 \sin x \cos x = \sin 2t
@@ -90,16 +90,18 @@ alpha = 1
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
+{From Figure ~\ref{fig:R1}, it is observed that HBM is in good agreement with the analytical solution at both low and high order sampling. The response converges and coincides with analytical solution.}
+
 \subsection{Parametrically excited Duffing Oscillator}
 
 \begin{equation}
 	\ddot{x} + x + \epsilon \left[ 2 \mu \dot{x} + \alpha x^3 + 2 k x \cos \omega t \right] = \sin 2t	
 \end{equation}
-epsilon = 1.0
-mu = 1.0
-alpha = 1.0
+$\epsilon$ = 1.0
+$\mu$ = 1.0
+$\alpha$ = 1.0
 k = 1.0
-omega = 2.0
+$\omega$ = 2.0
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
@@ -111,8 +113,9 @@ omega = 2.0
 		\caption{n = 99}
     \end{subfigure}
     \caption{Comparison between HB and analytical result.}
-    \label{fig:R1}
+    \label{fig:R2}
 \end{figure}
+{Similar convergence trend is observed for parametrically excited nonlinear oscillating system.}
 \subsection{Hypersonic Flutter}
 The governing equation can be written as
 

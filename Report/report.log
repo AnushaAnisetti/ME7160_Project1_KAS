@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  28 NOV 2015 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  29 NOV 2015 11:29
 entering extended mode
 **C:/Users/anusha/Documents/GitHub/ME7160_Project1_KAS/Report/report.tex
 (C:/Users/anusha/Documents/GitHub/ME7160_Project1_KAS/Report/report.tex
@@ -308,9 +308,6 @@ G,.JBIG2,.JB2,.eps]
 
 LaTeX Warning: Label `fig:R1' multiply defined.
 
-
-LaTeX Warning: Label `fig:R1' multiply defined.
-
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -389,14 +386,14 @@ Package epstopdf Info: Source file: <figure/1N19.eps>
 (epstopdf)                    size: 17640 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/1N19-eps-converted-t
 o.pdf figure/1N19.eps>
-(epstopdf)             \includegraphics on input line 60.
+(epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/1N19-eps-converted-to.pdf, id=1, 1883.035pt x 1015.795pt>
 File: figure/1N19-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N19-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 60
+Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 59
 .
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
 Package epstopdf Info: Source file: <figure/1N30.eps>
@@ -407,14 +404,14 @@ Package epstopdf Info: Source file: <figure/1N30.eps>
 (epstopdf)                    size: 19291 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/1N30-eps-converted-t
 o.pdf figure/1N30.eps>
-(epstopdf)             \includegraphics on input line 64.
+(epstopdf)             \includegraphics on input line 63.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/1N30-eps-converted-to.pdf, id=2, 1883.035pt x 1015.795pt>
 File: figure/1N30-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N30-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 64
+Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 63
 .
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
  [1
@@ -464,7 +461,7 @@ Package epstopdf Info: Source file: <figure/3N20.eps>
 (epstopdf)                    size: 17043 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/3N20-eps-converted-t
 o.pdf figure/3N20.eps>
-(epstopdf)             \includegraphics on input line 106.
+(epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/3N20-eps-converted-to.pdf, id=15, 1899.095pt x 1015.795pt>
@@ -472,7 +469,7 @@ File: figure/3N20-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N20-eps-converted-to.pdf>
 Package pdftex.def Info: figure/3N20-eps-converted-to.pdf used on input line 10
-6.
+8.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
 Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    date: 2015-11-28 11:43:03
@@ -482,7 +479,7 @@ Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    size: 18459 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/3N99-eps-converted-t
 o.pdf figure/3N99.eps>
-(epstopdf)             \includegraphics on input line 110.
+(epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/3N99-eps-converted-to.pdf, id=16, 1899.095pt x 1015.795pt>
@@ -490,25 +487,25 @@ File: figure/3N99-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N99-eps-converted-to.pdf>
 Package pdftex.def Info: figure/3N99-eps-converted-to.pdf used on input line 11
-0.
+2.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
  [2 <./figure/1N19-eps-converted-to.pdf> <./figure/1N30-eps-converted-to.pdf> <
-./figure/2N75-eps-converted-to.pdf> <./figure/2N199-eps-converted-to.pdf> <./fi
-gure/3N20-eps-converted-to.pdf> <./figure/3N99-eps-converted-to.pdf>] (report.b
-bl
+./figure/2N75-eps-converted-to.pdf> <./figure/2N199-eps-converted-to.pdf>] (rep
+ort.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [3] (report.aux)
+) [3 <./figure/3N20-eps-converted-to.pdf> <./figure/3N99-eps-converted-to.pdf>]
+[4] (report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5840 strings out of 493636
- 89670 string characters out of 3143752
- 162414 words of memory out of 3000000
- 9133 multiletter control sequences out of 15000+200000
+ 5841 strings out of 493636
+ 89678 string characters out of 3143752
+ 164422 words of memory out of 3000000
+ 9134 multiletter control sequences out of 15000+200000
  12568 words of font info for 47 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,10n,38p,544b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -525,9 +522,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on report.pdf (3 pages, 253972 bytes).
+Output written on report.pdf (4 pages, 255770 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
+ 258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
