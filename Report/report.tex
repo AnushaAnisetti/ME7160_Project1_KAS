@@ -18,11 +18,12 @@
 \usepackage[procnames]{listings}
 \usepackage{color}
 \usepackage{multirow}
+\usepackage{epstopdf}
 
 %title and author details
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
-\author[1]{(Add your name)}
+\author[1]{Anusha Anisetti}
 \author[1]{(Add your name)}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
@@ -33,6 +34,20 @@
 
 \abstract{}
 % ===================================================================
+\section{Introduction}
+{Nonlinear oscillations problem are important issues in physical science, mechanical structures and other engineering researches. Nonlinear systems display different behaviors than linear systems. They can exhibit
+\begin{enumerate}  
+\item  multiply steady state solutions, stable and unstable, in response to the same inputs (bifurcation),
+\item  response at frequencies other than forcing frequency
+\item  hysterisis with jump phenomenon, that includes discontinuous variations in the response of the system when system parameters are varied,
+\item  irregular motions that are extremely sensitive to the initial conditions (chaos).
+\end{enumerate}
+
+Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
+for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
+
+In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. 
+}
 \section{Demonstration Results}
 \subsection{Linear MCK System}
 
