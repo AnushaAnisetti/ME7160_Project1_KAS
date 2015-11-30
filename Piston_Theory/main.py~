@@ -65,9 +65,9 @@ Zy = airfoil[:, 1]
 # Calcualte the spatial part of the velocity
 dZdx = (Zy[2:] - Zy[:-2]) / (Zx[2:] - Zx[:-2])
 # Calcualte the temporal part of the velocity
-dZdt = 0.0 * dZdx
+dZdt = 0.0
 # Calculate normal velocity
-vn = dZdt + V * dZdx
+vn = V * dZdx
 
 # Calculate pressure
 P = Pinfty + Pinfty * (gamma * vn / ainfty + gamma * (gamma + 1) * (vn / ainfty)**2 / 4 +
