@@ -168,7 +168,28 @@ By expanding Equation \eqref{eq:pistonTheory}, and substituting for $Z(x,t)$ fro
 \end{gather}\label{eq:GEfull}
 \end{subequations}
 
-Equation \eqref{eq:GEfull} needs to be solved for $\theta$ using Harmonic Balance method.
+Equation \eqref{eq:GEfull} needs to be solved for $\theta$ using Harmonic Balance method. For this problem the operating conditions of the vehicle are selected as follows:
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c|c}
+	$\gamma$ & 1.4 \\ \hline
+	$a_\infty$ & 343 m/s \\ \hline
+	$P_\infty$ & 10 Pa \\ \hline
+	V & 600 m/s \\
+	\end{tabular}
+	\end{center}
+	\caption{Operating conditions.}
+\end{table}
+
+For verification, the harmonic balance results are compared with the numerical integration is Figure \eqref{fig:hypersonicFlutterResult}. As shown here, the harmonic balance predicts a static solution ($\theta(t_\infty) = -1.706$) however, the numerical integration predicts oscillation. The interesting point in here is that the time average value of numerical integration is the same as harmonic balance results. This means that the harmonic balance did not have enough frequency content to capture the oscillations. It only captured the constant term.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12.0 cm]{figure/4N9.eps}
+	\caption{Comparison between HB and analytical result}
+	\label{fig:hypersonicFlutterResult}
+\end{figure}
 % ===================================================================
 \bibliographystyle{unsrt}
 \bibliography{ref}
