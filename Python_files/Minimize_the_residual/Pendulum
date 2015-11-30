@@ -1,0 +1,63 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+from scipy.optimize import fmin_slsqp
+from scipy.integrate import odeint
+# # --------------------------------------------------------------------------------------------------------------------
+font = {'family' : 'monospace',
+        'weight' : 'normal',
+        'size'   : 52}
+plt.rc('font', **font)
+linewidth = 9.0
+markersize = 20
+# # --------------------------------------------------------------------------------------------------------------------
+m1=2.0
+l1=1.0
+m2=1.0
+l2=2.0
+g=32.2
+
+N = 99
+T = 2*2*np.pi
+t = np.linspace(0, T, N+1)
+t = t[0:-1]
+Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
+u0 = np.zeros(N)
+v0 = np.zeros(N)
+
+def residual(theta1,theta2):
+    Theta1 = np.fft.fft(theta1)
+    Theta2 = np.fft.fft(theta2)
+    dtheta1 = np.fft.ifft(np.multiply(1j * Omega, Theta1))
+    dtheta2 = np.fft.ifft(np.multiply(1j * Omega, Theta2))
+    ddtheta1 = np.fft.ifft(np.multiply(-Omega**2, Theta1))
+    ddtheta2 = np.fft.ifft(np.multiply(-Omega**2, Theta2))
+    Residual1 = (m1+m2)*l1*ddtheta1+m2*l2*np.cos(theta1-theta2)*ddtheta2+m2*l2*np.sin(theta1-theta2)*dtheta2**2+g*(m1+m2)*np.sin(theta1)
+    Residual1 = np.sum(np.abs((Residual1**2)))
+    Residual2 = m2*l2*ddtheta2+m2*l1*np.cos(theta1-theta2)*ddtheta1-m2*l1*np.sin(theta1-theta2)*dtheta1**2+m2*g*np.sin(theta2)
+    Residual2 = np.sum(np.abs((Residual2**2)))
+    return Residual1,Residual2
+
+# res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
+res1 = minimize(residual, [u0 v0],args=(theta1,theta2))
+res2 = minimize(residual, v0)
+vSol = res1.theta2
+
+# Numerical solution
+# def RHS(X, t=0.0):
+#     x1, x2 = X
+#     x1dot = x2
+#     x2dot = -x1 - epsilon * (2 * mu * x2 + alpha * x1**3 + 2 * k * x1 * np.cos(omega * t)) + np.sin(2 * t)
+#     return [x1dot, x2dot]
+#
+# ta = np.linspace(0.0, T, N)
+# sol = odeint(RHS, [0, 0], ta)
+plt.figure(figsize=(30,15))
+plt.plot(t, res.x, 'k',
+         ta, sol[:, 0], 'r--',
+         lw=linewidth, ms=markersize)
+plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
+# plt.xlabel('Time')
+# plt.ylabel('Displacement')
+plt.savefig('4N20.eps', format='eps', dpi=1000, bbox_inches='tight')
+plt.show()
