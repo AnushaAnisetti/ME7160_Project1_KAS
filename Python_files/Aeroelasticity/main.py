@@ -38,6 +38,8 @@ res = minimize(residual, x0)
 xSol = res.x
 print(xSol)
 print(residual(xSol))
+np.savetxt('HB_X.txt', xSol, fmt='%2.2f')
+np.savetxt('HB_t.txt', t, fmt='%2.2f')
 
 # Numerical solution
 def RHS(X, t=0.0):
@@ -48,10 +50,11 @@ def RHS(X, t=0.0):
     x2dot = -100*x1 + Mz
     return [x1dot, x2dot]
 
-ta = np.linspace(0.0, 1*T, 100*N)
+ta = np.linspace(0.0, 1*T, 50*N)
 sol = odeint(RHS, [0, 0], ta)
 np.savetxt('ND_X.txt', sol[:, 0], fmt='%2.2f')
 np.savetxt('ND_Xdot.txt', sol[:, 1], fmt='%2.2f')
+np.savetxt('ND_T.txt', ta, fmt='%2.2f')
 
 plt.figure()
 plt.plot(t, xSol, 'k',
