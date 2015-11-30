@@ -7,7 +7,7 @@ from scipy.optimize import minimize
 from scipy.optimize import fmin_slsqp
 from scipy.integrate import odeint
 
-gs.wedge(theta = 10, thetaDot = 1)
+gs.wedge(theta = 0, thetaDot = 5)
 [Fx, Fy, Mz] = aero.calcLoad()
 
 N = 9
@@ -39,9 +39,24 @@ xSol = res.x
 print(xSol)
 print(residual(xSol))
 
-# plt.figure()
-# plt.plot(t, xSol, 'k')
-# plt.legend(['Harmonic Balance'])
-# plt.xlabel('Time')
-# plt.ylabel('Displacement')
-# plt.show()
+# Numerical solution
+def RHS(X, t=0.0):
+    x1, x2 = X
+    gs.wedge(theta=x1, thetaDot=x2)
+    [Fx, Fy, Mz] = aero.calcLoad()
+    x1dot = x2
+    x2dot = -100*x1 + Mz
+    return [x1dot, x2dot]
+
+ta = np.linspace(0.0, 1*T, 100*N)
+sol = odeint(RHS, [0, 0], ta)
+np.savetxt('ND_X.txt', sol[:, 0], fmt='%2.2f')
+np.savetxt('ND_Xdot.txt', sol[:, 1], fmt='%2.2f')
+
+plt.figure()
+plt.plot(t, xSol, 'k',
+         ta, sol[:, 0], 'ro')
+plt.legend(['Harmonic Balance', 'Numerical Differentiation'])
+plt.xlabel('Time')
+plt.ylabel('Displacement')
+plt.show()
