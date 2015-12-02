@@ -113,7 +113,8 @@ We looked at the applicability of HB in handling the nonlinear, force, parametri
 	\ddot{x} + x + \epsilon \left[ 2 \mu \dot{x} + \alpha x^3 + 2 k x \cos \omega t \right] = \sin 2t	
 \end{equation}
 
-We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, $\omega = 2.0$ for the system parameters.
+We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega = 2.0$ for the system parameters. Like the previous example, we used time integration to verify the results of HB method as shown in Figure \ref{fig:R3}. As seen here, similar convergence trend is observed for parametrically excited nonlinear oscillating system for different number of harmonics.
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
@@ -127,7 +128,6 @@ We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, $\omega = 2.0
     \caption{Comparison between HB and analytical result.}
     \label{fig:R3}
 \end{figure}
-{Similar convergence trend is observed for parametrically excited nonlinear oscillating system.}
 
 % -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
@@ -137,13 +137,25 @@ The governing equation can be written as
 	m\ddot{\theta} + k \theta = f(\theta, t)
 \end{equation}
 
-where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. The pressure distribution on the airfoil can be written as follows
+where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. We used the piston theory to calculate the pressure distribution on the airfoil \cite{thuruthimattam2002aeroelasticity}.
 
 \begin{equation}\label{eq:pistonTheory}
 	\frac{P(x, t)}{P_\infty} = \left( 1+ \frac{\gamma - 1}{2} \frac{v_n}{a_\infty} \right)^{\frac{2 \gamma}{\gamma - 1}}
 \end{equation}
 
-where $P(x, t)$ is the pressure at point $x$ on the airfoil, $P_\infty$ is the free stream pressure, $\gamma$ is the ratio of specific heats and $a_\infty$ is the speed of sound. $v_n$ is calculated using the following equation.
+where $P(x, t)$ is the pressure at point $x$ on the airfoil, $P_\infty$ is the free stream pressure, $\gamma$ is the ratio of specific heats and $a_\infty$ is the speed of sound. The third order expansion of Equation \eqref{eq:pistonTheory} results in
+
+\begin{equation}
+	P(x,t) = P_\infty
+	\left[
+	1 +
+	\gamma \frac{v_n}{a_\infty} + 
+	\frac{\gamma (\gamma + 1)}{4} \left( \frac{v_n}{a_\infty} \right)^2 + 
+	\frac{\gamma (\gamma + 1)}{12} \left( \frac{v_n}{a_\infty} \right)^3
+	\right]
+\end{equation}
+
+$v_n$ is calculated using the following equation.
 
 \begin{equation}\label{eq:definitionOfVn}
 	v_n = \frac{\partial Z(x,t)}{\partial t} + V \frac{\partial Z(x,t)}{\partial x}
@@ -204,6 +216,7 @@ For verification, the harmonic balance results are compared with the numerical i
 	\caption{Comparison between HB and analytical result}
 	\label{fig:hypersonicFlutterResult}
 \end{figure}
+
 % ===================================================================
 \bibliographystyle{unsrt}
 \bibliography{ref}
