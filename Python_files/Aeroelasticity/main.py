@@ -11,7 +11,7 @@ gs.wedge(theta = 0, thetaDot = 5)
 [Fx, Fy, Mz] = aero.calcLoad()
 
 N = 9
-T = 2*2*np.pi
+T = 1*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
 Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
@@ -33,8 +33,8 @@ def residual(x):
     Residual = np.sum(np.abs((Residual**2)))
     return Residual
 
-# res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
-res = minimize(residual, x0)
+res = minimize(residual, x0, method='SLSQP', options={'maxiter':10000000})
+# res = minimize(residual, x0)
 xSol = res.x
 print(xSol)
 print(residual(xSol))
