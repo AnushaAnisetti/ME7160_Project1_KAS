@@ -7,7 +7,7 @@ fontsize = 20;
 linewidth = 3;
 % ------------------------------------------------------------------------------------------------------------------------------ %
 % \ddot{x} + \dot{x} = sin(2t) * cos(3t)
-N = 119; % Number of sample points in time
+N = 19; % Number of sample points in time
 t = linspace(0, 2*pi, N+1)';  % Time
 omega = 2 * pi / (t(end) - t(1)); % delta f
 t = t(1:end-1);
