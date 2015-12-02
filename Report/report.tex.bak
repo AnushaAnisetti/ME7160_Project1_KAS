@@ -47,12 +47,26 @@ Hence studying nonlinearieties is of extreme importance. As most of the real sys
 for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
 
 In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
+% ===================================================================
 \section{Demonstration Results}
-\subsection{Linear MCK System}
+In this section, we apply the method of harmonic balance to different linear and non-linear problems. For the cases where analytical results are not available, we use numerical time integration to verify the results where it shows a good comparison. It should be noted that since the harmonic balance method is used to calculate the limit cycle oscillations of the system. Therefore, it is needed to let the transient part of time integration to die out. Only after this point, the two results match.
 
-\begin{equation}
+% -------------------------------------------------------------------
+\subsection{Linear MCK System}
+For the first demonstration case we looked at the forced linear damped oscillation of a single degree of freedom system. The governing equation is defined in Equation \eqref{eq:1GE}
+
+\begin{equation}\label{eq:1GE}
 	\ddot{x} + \dot{x} + x = \sin 2t
 \end{equation}
+
+This equation has a closed form solution that we can use to verify the harmonic balance result. The solution for Equation \eqref{eq:1GE} is calculated as
+
+\begin{equation}
+	x(t) = -0.23 \sin 2t - 0.15 \cos 2t
+\end{equation}
+
+The comparison between the HB and analytical result for Equation \eqref{eq:1GE} is shown in Figure \ref{fig:R1} for different number of harmonics in HB method. As can be seen here, the HB results matches perfectly with analytical solution of the system.
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
@@ -66,17 +80,17 @@ In this report, Harmonic balance methodology is first build on closed form equat
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
-{Linear oscillating system response attained using Harmonic Balance Method (HBM), coincides well with the analytical solution.}
 
+% -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}
-(Problem 2.45 on page 140 of Applied Nonlinear Dynamics: Analytical, Computational, and Experimental Methods (Nayfeh))
-\begin{equation}
+For the second demonstration example, we looked at problem 2.45 on page 140 of Applied Nonlinear Dynamics (Nayfeh) book. The governing equation for this problem is shown in Equation \eqref{eq:2GE}
+
+\begin{equation}\label{eq:2GE}
 	\ddot{x} + 2 \mu \dot{x} + \frac{g}{R} \sin x - \alpha^2 \sin x \cos x = \sin 2t
 \end{equation}
-mu = 0.1
-g = 9.81
-R = 1.0
-alpha = 1
+
+In above equation, we chose $\mu = 0.1$, $g = 9.81$, $R = 1.0$, and $\alpha = 1$. We used \texttt{odeint} function in \texttt{python} for time integration to verify the results of HB method. This is shown in Figure \ref{fig:R2}. As shown here, HB is in good agreement with the numerical solution at both low and high order sampling. The response converges and coincides with analytical solution as the transient part of the solution dies out.
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
@@ -88,20 +102,18 @@ alpha = 1
 		\caption{n = 199}
     \end{subfigure}
     \caption{Comparison between HB and analytical result.}
-    \label{fig:R1}
+    \label{fig:R2}
 \end{figure}
-{From Figure ~\ref{fig:R1}, it is observed that HBM is in good agreement with the analytical solution at both low and high order sampling. The response converges and coincides with analytical solution.}
 
+% -------------------------------------------------------------------
 \subsection{Parametrically excited Duffing Oscillator}
+We looked at the applicability of HB in handling the nonlinear, force, parametrically excited Duffing oscillator. The governing equation of this system is shown in Equation \eqref{eq:3GE}.
 
-\begin{equation}
+\begin{equation}\label{eq:3GE}
 	\ddot{x} + x + \epsilon \left[ 2 \mu \dot{x} + \alpha x^3 + 2 k x \cos \omega t \right] = \sin 2t	
 \end{equation}
-$\epsilon$ = 1.0
-$\mu$ = 1.0
-$\alpha$ = 1.0
-k = 1.0
-$\omega$ = 2.0
+
+We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, $\omega = 2.0$ for the system parameters.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
@@ -113,9 +125,11 @@ $\omega$ = 2.0
 		\caption{n = 99}
     \end{subfigure}
     \caption{Comparison between HB and analytical result.}
-    \label{fig:R2}
+    \label{fig:R3}
 \end{figure}
 {Similar convergence trend is observed for parametrically excited nonlinear oscillating system.}
+
+% -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
 The governing equation can be written as
 
@@ -182,11 +196,11 @@ Equation \eqref{eq:GEfull} needs to be solved for $\theta$ using Harmonic Balanc
 	\caption{Operating conditions.}
 \end{table}
 
-For verification, the harmonic balance results are compared with the numerical integration is Figure \eqref{fig:hypersonicFlutterResult}. As shown here, the harmonic balance predicts a static solution ($\theta(t_\infty) = -1.706$) however, the numerical integration predicts oscillation. The interesting point in here is that the time average value of numerical integration is the same as harmonic balance results. This means that the ha
+For verification, the harmonic balance results are compared with the numerical integration is Figure \eqref{fig:hypersonicFlutterResult}. As shown here, the harmonic balance predicts a static solution ($\theta(t_\infty) = -1.706$) however, the numerical integration predicts oscillation. The interesting point in here is that the time average value of numerical integration is the same as harmonic balance results. This means that the harmonic balance did not have enough frequency content to capture the oscillations. It only captured the constant term.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=8.0 cm]{figure/4N9.eps}
+	\includegraphics[width=12.0 cm]{figure/4N9.eps}
 	\caption{Comparison between HB and analytical result}
 	\label{fig:hypersonicFlutterResult}
 \end{figure}
