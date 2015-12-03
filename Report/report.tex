@@ -44,8 +44,31 @@
 \end{enumerate}
 
 Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
-for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
+for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method.
+\subsection{Harmonic Balance Method}
+{Harmonic Balance Method assumes a truncated Fourier series as the solution to a nonlinear system. 
+\begin{equation}
+x(t) = a_0+\sum\limits_{n=1}^N (a_n \cos(n\omega t)+b_n \sin(n \omega t))
+\end{equation}
 
+where $\omega$ is the angular frequency with time period $T$ of the solution and $N$ is the order of truncation. 
+The assumed solution is substituted into the equation of motion to determine the fourier coefficients to form an approximate closed form solution. The high-order harmonic components contribute significantly to whole solution for accuracy, where as a truncated series expantion makes the solution less accurate. If more harmonics are included, it becomes quite complext to solve the algebraic expressions for the Fourier coefficients.
+
+\subsubsection{Advantages}
+\begin{itemize}
+\item{For some equations, a first-order truncated Fourier series can provide accurate results, especially as measure in terms of percentage error for the angular frequency $\omega$}
+\item{Provides a close to accurate solution to steady-state responses.}
+\end{itemize}
+
+\subsubsection{Disdvantages}
+\begin{itemize}
+\item{Harmonic balance procedure cannot be applied to non-conservative oscillators as such systems involve transient behaviors}
+\item{Determining the angular frequency and amplitudes may become algebraically complext.}
+\end{itemize}
+
+In this report, Harmonic balance methodology is first adapted on  linear equations and then extended to basic non-linear equations with closed form solution for comparison and extended to non-linear equations of first and second order. The results are compared with time integrated solutions of the corresponding systems.}
+
+<<<<<<< HEAD
 In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
 
 % ===================================================================
@@ -58,6 +81,8 @@ In this report, Harmonic balance methodology is first build on closed form equat
 	\label{fig:flowchart}
 \end{figure}
 
+=======
+>>>>>>> 003325b51d16b8aa39b45aaf28b3443ea04e01bb
 % ===================================================================
 \section{Demonstration Results}
 In this section, we apply the method of harmonic balance to different linear and non-linear problems. For the cases where analytical results are not available, we use numerical time integration to verify the results where it shows a good comparison. It should be noted that since the harmonic balance method is used to calculate the limit cycle oscillations of the system. Therefore, it is needed to let the transient part of time integration to die out. Only after this point, the two results match.
