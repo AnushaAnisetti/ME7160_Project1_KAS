@@ -51,7 +51,7 @@ In this report, Harmonic balance methodology is first build on closed form equat
 % ===================================================================
 \section{Numerical Approach}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
 	\caption{Flowchart for numerical approach.}
