@@ -47,6 +47,17 @@ Hence studying nonlinearieties is of extreme importance. As most of the real sys
 for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
 
 In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
+
+% ===================================================================
+\section{Numerical Approach}
+
+\begin{figure}
+	\centering
+	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
+	\caption{Flowchart for numerical approach.}
+	\label{fig:flowchart}
+\end{figure}
+
 % ===================================================================
 \section{Demonstration Results}
 In this section, we apply the method of harmonic balance to different linear and non-linear problems. For the cases where analytical results are not available, we use numerical time integration to verify the results where it shows a good comparison. It should be noted that since the harmonic balance method is used to calculate the limit cycle oscillations of the system. Therefore, it is needed to let the transient part of time integration to die out. Only after this point, the two results match.
