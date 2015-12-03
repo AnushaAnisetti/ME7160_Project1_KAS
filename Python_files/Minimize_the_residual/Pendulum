@@ -36,7 +36,8 @@ def residual(theta1,theta2):
     Residual1 = np.sum(np.abs((Residual1**2)))
     Residual2 = m2*l2*ddtheta2+m2*l1*np.cos(theta1-theta2)*ddtheta1-m2*l1*np.sin(theta1-theta2)*dtheta1**2+m2*g*np.sin(theta2)
     Residual2 = np.sum(np.abs((Residual2**2)))
-    return Residual1,Residual2
+    Residual = Residual1+Residual2
+    return Residual
 
 # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
 res1 = minimize(residual,theta10)
