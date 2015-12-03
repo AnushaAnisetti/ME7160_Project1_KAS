@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  2 DEC 2015 10:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  3 DEC 2015 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,7 +378,14 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+wasy on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-) [1
+)
+<figure/minimize_residual.png, id=1, 619.56468pt x 511.9125pt>
+File: figure/minimize_residual.png Graphic file (type png)
+
+<use figure/minimize_residual.png>
+Package pdftex.def Info: figure/minimize_residual.png used on input line 56.
+(pdftex.def)             Requested size: 309.92337pt x 256.0748pt.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package epstopdf Info: Source file: <figure/1N19.eps>
@@ -389,14 +396,13 @@ Package epstopdf Info: Source file: <figure/1N19.eps>
 (epstopdf)                    size: 17640 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/1N19-eps-converted-
 to.pdf figure/1N19.eps>
-(epstopdf)             \includegraphics on input line 73.
+(epstopdf)             \includegraphics on input line 84.
 Package epstopdf Info: Output file is already uptodate.
-
-<figure/1N19-eps-converted-to.pdf, id=11, 1883.035pt x 1015.795pt>
+ <figure/1N19-eps-converted-to.pdf, id=13, 1883.035pt x 1015.795pt>
 File: figure/1N19-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N19-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 73
+Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 84
 .
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
 Package epstopdf Info: Source file: <figure/1N30.eps>
@@ -407,16 +413,18 @@ Package epstopdf Info: Source file: <figure/1N30.eps>
 (epstopdf)                    size: 19291 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/1N30-eps-converted-
 to.pdf figure/1N30.eps>
-(epstopdf)             \includegraphics on input line 77.
+(epstopdf)             \includegraphics on input line 88.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/1N30-eps-converted-to.pdf, id=12, 1883.035pt x 1015.795pt>
+<figure/1N30-eps-converted-to.pdf, id=14, 1883.035pt x 1015.795pt>
 File: figure/1N30-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N30-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 77
+Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 88
 .
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
+ [2 <./figure/minimize_residual.png> <./figure/1N19-eps-converted-to.pdf> <./fi
+gure/1N30-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figure/2N75.eps>
 (epstopdf)                    date: 2015-11-27 19:11:34
 (epstopdf)                    size: 23540 bytes
@@ -425,15 +433,15 @@ Package epstopdf Info: Source file: <figure/2N75.eps>
 (epstopdf)                    size: 14883 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/2N75-eps-converted-
 to.pdf figure/2N75.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/2N75-eps-converted-to.pdf, id=13, 1901.1025pt x 1015.795pt>
+<figure/2N75-eps-converted-to.pdf, id=80, 1901.1025pt x 1015.795pt>
 File: figure/2N75-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/2N75-eps-converted-to.pdf>
-Package pdftex.def Info: figure/2N75-eps-converted-to.pdf used on input line 97
-.
+Package pdftex.def Info: figure/2N75-eps-converted-to.pdf used on input line 10
+8.
 (pdftex.def)             Requested size: 227.62204pt x 121.61115pt.
 Package epstopdf Info: Source file: <figure/2N199.eps>
 (epstopdf)                    date: 2015-11-27 19:12:17
@@ -443,18 +451,16 @@ Package epstopdf Info: Source file: <figure/2N199.eps>
 (epstopdf)                    size: 16902 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/2N199-eps-converted
 -to.pdf figure/2N199.eps>
-(epstopdf)             \includegraphics on input line 101.
+(epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/2N199-eps-converted-to.pdf, id=14, 1901.1025pt x 1015.795pt>
+<figure/2N199-eps-converted-to.pdf, id=81, 1901.1025pt x 1015.795pt>
 File: figure/2N199-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/2N199-eps-converted-to.pdf>
 Package pdftex.def Info: figure/2N199-eps-converted-to.pdf used on input line 1
-01.
+12.
 (pdftex.def)             Requested size: 227.62204pt x 121.61115pt.
- [2 <./figure/1N19-eps-converted-to.pdf> <./figure/1N30-eps-converted-to.pdf> <
-./figure/2N75-eps-converted-to.pdf> <./figure/2N199-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figure/3N20.eps>
 (epstopdf)                    date: 2015-11-27 19:21:50
 (epstopdf)                    size: 24995 bytes
@@ -463,15 +469,15 @@ Package epstopdf Info: Source file: <figure/3N20.eps>
 (epstopdf)                    size: 17043 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/3N20-eps-converted-
 to.pdf figure/3N20.eps>
-(epstopdf)             \includegraphics on input line 121.
+(epstopdf)             \includegraphics on input line 132.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/3N20-eps-converted-to.pdf, id=137, 1899.095pt x 1015.795pt>
+<figure/3N20-eps-converted-to.pdf, id=82, 1899.095pt x 1015.795pt>
 File: figure/3N20-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N20-eps-converted-to.pdf>
-Package pdftex.def Info: figure/3N20-eps-converted-to.pdf used on input line 12
-1.
+Package pdftex.def Info: figure/3N20-eps-converted-to.pdf used on input line 13
+2.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
 Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    date: 2015-11-27 19:21:31
@@ -481,17 +487,18 @@ Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    size: 18459 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/3N99-eps-converted-
 to.pdf figure/3N99.eps>
-(epstopdf)             \includegraphics on input line 125.
+(epstopdf)             \includegraphics on input line 136.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/3N99-eps-converted-to.pdf, id=138, 1899.095pt x 1015.795pt>
+<figure/3N99-eps-converted-to.pdf, id=83, 1899.095pt x 1015.795pt>
 File: figure/3N99-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N99-eps-converted-to.pdf>
-Package pdftex.def Info: figure/3N99-eps-converted-to.pdf used on input line 12
-5.
+Package pdftex.def Info: figure/3N99-eps-converted-to.pdf used on input line 13
+6.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
- [3 <./figure/3N20-eps-converted-to.pdf> <./figure/3N99-eps-converted-to.pdf>]
+ [3 <./figure/2N75-eps-converted-to.pdf> <./figure/2N199-eps-converted-to.pdf> 
+<./figure/3N20-eps-converted-to.pdf> <./figure/3N99-eps-converted-to.pdf>] [4]
 Package epstopdf Info: Source file: <figure/4N9.eps>
 (epstopdf)                    date: 2015-11-30 12:12:06
 (epstopdf)                    size: 33530 bytes
@@ -500,22 +507,22 @@ Package epstopdf Info: Source file: <figure/4N9.eps>
 (epstopdf)                    size: 20889 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/4N9-eps-converted-t
 o.pdf figure/4N9.eps>
-(epstopdf)             \includegraphics on input line 215.
+(epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/4N9-eps-converted-to.pdf, id=214, 1899.095pt x 1015.795pt>
+<figure/4N9-eps-converted-to.pdf, id=221, 1899.095pt x 1015.795pt>
 File: figure/4N9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/4N9-eps-converted-to.pdf>
-Package pdftex.def Info: figure/4N9-eps-converted-to.pdf used on input line 215
+Package pdftex.def Info: figure/4N9-eps-converted-to.pdf used on input line 226
 .
 (pdftex.def)             Requested size: 341.43306pt x 182.61821pt.
- (./report.bbl) [4 <./figure/4N9-eps-converted-to.pdf>] (./report.aux) ) 
+ (./report.bbl) [5 <./figure/4N9-eps-converted-to.pdf>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 5849 strings out of 494985
- 89777 string characters out of 6180356
- 158368 words of memory out of 5000000
- 8972 multiletter control sequences out of 15000+600000
+ 5856 strings out of 494985
+ 89948 string characters out of 6180356
+ 160376 words of memory out of 5000000
+ 8977 multiletter control sequences out of 15000+600000
  13082 words of font info for 49 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  42i,10n,38p,597b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -536,10 +543,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (4 pages, 290962 bytes).
+Output written on report.pdf (5 pages, 327579 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 315 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
