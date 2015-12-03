@@ -17,13 +17,13 @@ m2=1.0
 l2=2.0
 g=32.2
 
-N = 99
+N = 9
 T = 2*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
 Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
-u0 = np.zeros(N)
-v0 = np.zeros(N)
+theta10 = np.zeros(N)
+theta20 = np.zeros(N)
 
 def residual(theta1,theta2):
     Theta1 = np.fft.fft(theta1)
@@ -39,9 +39,10 @@ def residual(theta1,theta2):
     return Residual1,Residual2
 
 # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
-res1 = minimize(residual, [u0 v0],args=(theta1,theta2))
-res2 = minimize(residual, v0)
-vSol = res1.theta2
+res1 = minimize(residual,theta10)
+res2 = minimize(residual, theta20)
+theta1Sol = res1.theta1
+theta2Sol = res2.theta2
 
 # Numerical solution
 # def RHS(X, t=0.0):
@@ -53,8 +54,8 @@ vSol = res1.theta2
 # ta = np.linspace(0.0, T, N)
 # sol = odeint(RHS, [0, 0], ta)
 plt.figure(figsize=(30,15))
-plt.plot(t, res.x, 'k',
-         ta, sol[:, 0], 'r--',
+plt.plot(t, theta1Sol, 'k',
+         t, theta2Sol, 'b-',
          lw=linewidth, ms=markersize)
 plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
 # plt.xlabel('Time')
