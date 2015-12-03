@@ -1,3 +1,9 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{ashley2012piston}
+Ashley, H., \enquote{Piston theory-a new aerodynamic tool for the
+  aeroelastician,} {\em Journal of the Aeronautical Sciences\/}, Vol.~23,
+  No.~12, 1956, pp.~1109--1118.
 
 \end{thebibliography}
