@@ -1,0 +1,1014 @@
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="robots" content="NOARCHIVE">
+<meta name="robots" content="noodp" />
+<meta name="robots" content="noydir" />
+
+<link rel="canonical" href="http://www.sciencedirect.com/science/article/pii/S0022460X10002464">
+
+
+<link rel="shortcut icon" href="http://cdn.els-cdn.com/sd/favSD.ico" type="image/x-icon">
+<title>
+ An adaptive harmonic balance method for predicting the nonlinear dynamic responses of mechanical systems—Application to bolted structures
+ </title> 
+
+<link type="text/css" rel="StyleSheet" href="http://www.sciencedirect.com/gadgetservices/gadgets/v9/css/gadgets_ext,gadgets,toolbar,SDArticleGadgetOverRide,jquery-ui-1.8.4.custom.css">
+
+
+<link rel="stylesheet" href="http://cdn.els-cdn.com/sd/css/article_1512R2.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.els-cdn.com/sd/css/articleSprite_1512R2.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.els-cdn.com/sd/css/jquery-ui_1512R2.css" type="text/css">
+
+
+
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" Title="Default Styles" href="http://cdn.els-cdn.com/sd/css/css_gen_ielt9_1512R2.css" type="text/css">
+<![endif]-->
+
+<script>
+var ab=new Object();
+ab.entitled = true;
+</script>
+<script>(function() {var scriptTag = document.createElement('script'); 
+scriptTag.type = 'text/javascript';scriptTag.async = true;
+scriptTag.src = '//cdn.optimizely.com/js/204774041.js';
+var head = document.getElementsByTagName('head')[0];
+head.parentNode.insertBefore(scriptTag, head);
+})();function optimizelyTimeout() {
+window.optimizely = window.optimizely|| []; 
+if(!window.optimizely.data) {
+window.optimizely.push("timeout"); } }
+setTimeout(optimizelyTimeout, 1000); </script>
+
+<script>
+var prs = new Object();prs.rt=function(label,ts){this[label]=(ts||ts==0?ts:new Date().getTime());};
+</script>
+
+
+
+<!--[if lte IE 7]>
+<script src="http://cdn.els-cdn.com/sd/ut/js/json2_1512R2.js.min"></script>
+<![endif]-->
+
+
+
+</head>
+
+<body>
+
+<div class="ua_btn" role="region" aria-label="screen reader compatability"><a role="button" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S0022460X10002464?np=y">Screen reader users, click here to load entire article</a>This page uses JavaScript to progressively load the article content as a user scrolls.  Screen reader users, click the load entire article button to bypass dynamically loaded article content.</div>
+
+
+
+<script>
+var refLinkURL = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S0022460X10002464";
+var updatedCitedBy = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+var refResolvePath = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S0022460X10002464&_refCnt=25&_docType=article";
+
+// these variables handle the reference resolution. Please ignore the naming.
+// the first variable myMap will hold an associative array of links by bibID
+// the second variable myXabsCounts holds the scopus counts.
+var myMap = []; // html of links for references.
+var myXabsCounts = []; // scopus counts
+</script>
+<div id="header-area">
+  
+
+
+<!-- ************* For A/B testing FAST and SOLR Proxy ***************** -->
+
+<!-- *************End for A/B testing FAST and SOLR Proxy *****************-->
+
+
+
+<div id="ieWarningMsg">
+    <span class="infoIcon_ie spErrorIcon">
+        Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to <a href="http://blog.sciencedirect.com/posts/have-you-heard-spread-the-word-about-upgrading-your-browser"> this blog post</a> for more information.
+    </span>
+    <a class="closeBt" title="Close Internet Explorer 7 warning">Close</a>
+</div>
+
+
+
+<div id="header">
+<div class="headerBlk">
+    <div class="headerInner" role="navigation" aria-label="ScienceDirect">
+        <div class="home">
+            
+            <!--INSERTS THE TEMPLATE VARIABLES POPULATED FROM DB for SCIVERSE and PRODUCT labels-->
+            
+                <a href="http://www.sciencedirect.com/" title="ScienceDirect -The world's leading full-text scientific database"> <span class="logoScienceDirectImg">&nbsp;</span></a>
+            
+        </div>
+
+        
+            <ul class="publication">
+                <!-- Journals link -->
+                
+                    
+                        <li>
+                            <a  href="http://www.sciencedirect.com/science/journals">Journals</a>
+                        </li>
+                     
+                
+
+                <!-- Books link -->
+                
+                    
+                        <li class="sep">
+                            <a  href="http://www.sciencedirect.com/science/bookbshsrw">Books</a>
+                        </li>
+                     
+                
+            </ul>
+        
+
+    </div>
+    
+         <!-- if not logged in -->
+         
+            
+            <div id="login" class="clearfix" aria-label="Help and Sign In" role="navigation" >
+            <ul class="userlinks">
+                
+                    <li>
+                        <a  href="http://www.sciencedirect.com/science?_ob=ShoppingCartURL&_method=display&_zone=TopNavBar&_origin=article&md5=98a3e89aa38c5044516e5e4ca8b64e74" target="_top" name="cart" title="Shopping Cart" >Shopping cart</a>
+                    </li>
+                
+                
+                
+            
+                <!--top right widget-->
+                <li  id="loginPlus">
+                    <h2><a id="loginPlusScript" href="javascript:LoginBox.flipLogin('loginBox',null);" title="Sign in to ScienceDirect" class="novisit plus nojs S_C_SignIn" aria-haspopup="true" aria-expanded="false" aria-controls="loginBox" role="button" >Sign in</a></h2>
+                    <noscript><a href="http://www.sciencedirect.com/science?_ob=HomePageURL&_method=userHomePage&_fl=y&md5=6dada1fb726164470bad9e40bbc4d7fa" title="Open the Sign in Box" class="plus S_C_SignIn" id="loginPlusNoScript" >Sign in</a></noscript>
+					
+                    <div id="loginBox" role="dialog" aria-labelledby="headingSignIn"  style="width:600px;display:none;"> 
+                        
+                        <div style="width:285px;float:right;border-left:1px solid #9B9B9B;padding-left:10px;min-height:180px;">
+                            
+                                <div class="openAthens"><a href="https://auth.elsevier.com/ShibAuth/institutionLogin?entityID=https%3A%2F%2Fidp.eduserv.org.uk%2Fopenathens&appReturnURL=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0022460X10002464" title="Log in using OpenAthens">OpenAthens login</a></div>
+                            
+                            
+                            <div class="sampletext">
+                                <div style="font-weight:bold;padding-bottom:7px;"><h3><b>Login via your institution</b></h3></div>
+                                
+                                
+                                    <div class="fedLink"><a href="http://www.sciencedirect.com/science/externallogin" title="Other institution login">Other institution login</a></div>
+                                
+                            </div>
+                            
+                            
+                            
+                                
+                            
+                            
+                            
+                        </div>
+                        
+                        <div class="padding" style="width:285px;" >
+                            <form name="sdLogin" method="POST" action="https://www.sciencedirect.com/science/login" id="login-box-form" style="margin:0;">
+                            <b><h3 id="headingSignIn">Sign in using your ScienceDirect credentials</h3></b>
+                            <input type="hidden" name="login" value="login">
+                            <div style="margin-top:20px;">
+                            <label for="username"><span style="text-align:right;">Username:</span>
+                            <input id="username" type="text" name="userid" title="Please enter your username here" /></label>
+                            </div>
+                            
+                            <div style="margin-top:7px;">
+                            <label for="password"><span style="text-align:right;">Password:</span>
+                            <input id="password" type="password" name="password" maxlength="20" title="Please enter your password here" onkeypress="if(13==event.keyCode)this.form.submit();if (13==event.keyCode)return false;"/></label>
+                            </div>
+                                   
+                                       
+                            
+                            <div class="remember">
+                            <input type="checkbox" checked name="rememberid" id="rememberMe" value="Y" class="allCheck top2fix" title="Checking this option will log you in automatically next time you visit ScienceDirect"/>
+                            <label for="rememberMe" title="Checking this option will log you in automatically next time you visit ScienceDirect">Remember me</label>
+                            </div>
+                            
+                            <input type="hidden" name="_ob" value="MiamiLogonURL">
+                            <input type="hidden" name="targetURL" value="http://www.sciencedirect.com/science/article/pii/S0022460X10002464" >
+                            <input type="hidden" name="returnURL" value="http://www.sciencedirect.com/science/article/pii/S0022460X10002464" >
+                            <div class="submit" >
+                            
+                            <div style="float:left;padding-left:0px;"><input class="button" type="Submit" name="arrow" alt="Sign in to ScienceDirect" title="Sign in to ScienceDirect" value="Sign in"/></div>
+                        
+                            
+                            <div class="notRegistered"><span class="astPad">| </span><span><a href="https://www.sciencedirect.com/science/register-new-user" title="" target="_top">Not Registered?</a></span></div>
+                            
+                            
+                            <div style="clear:left;"></div>
+                            </div>
+                            
+                            <div class="forgotpass">
+                            <a href="http://www.sciencedirect.com/science?_ob=ReminderURL&_method=display&md5=4a97631c25ac81c09ad2f961106e9da2" target="passwd" onClick="var remindWin;remindWin=window.open('','passwd','scrollbars=yes,resizable=yes,directories=no,toolbar=n,menubar=no,status=no,width=650,height=300');" title="Click here for help in recovering your ScienceDirect access">Forgotten username or password?</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="last"><a class="S_C_helpLink" href="/science?_ob=HelpURL&_file=browse_open_doc.htm&_btn=Y&_zone=TopNavBar&_origin=article" target="sdhelp" title="Help (Opens new window)" onClick="var helpWin; helpWin=window.open('/science?_ob=HelpURL&_file=browse_open_doc.htm&_btn=Y&_zone=TopNavBar&_origin=article','sdhelp','scrollbars=yes,resizable=yes,directories=no,toolbar=no,menubar=no,status=no,width=984,height=738'); helpWin.focus(); return false" >Help</a></li>
+                
+            </ul>
+            </div>
+            
+            
+        <!-- logged in -->
+             
+    
+</div>
+
+
+    
+        
+    
+           
+
+
+</div><!--header-->
+
+
+
+
+
+
+
+
+
+</div><!--header-area-->
+<div id="page-area">
+    
+     
+     
+    <div id="articleToolbar" class="clearfix quicksearch prd_sci_dir">
+        <div id="articleNav">
+  <ul aria-label="Article options" role="navigation" class="clearfix">
+    <!-- return to gateway -->
+     
+
+
+
+
+
+
+<li>
+  <div class="icon_pdf toolbar">
+    <div class="largeIcon"></div>
+    <a id="pdfLink" rel="nofollow"   href="http://www.sciencedirect.com/science/article/pii/S0022460X10002464/pdfft?md5=1f7df34f86fc5323670198dc0f1f4845&pid=1-s2.0-S0022460X10002464-main.pdf" queryStr="?_origin=article&_zone=toolbar" target="newPdfWin"   pdfurl="http://www.sciencedirect.com/science/article/pii/S0022460X10002464/pdfft?md5=1f7df34f86fc5323670198dc0f1f4845&pid=1-s2.0-S0022460X10002464-main.pdf" queryStr="?_origin=article&_zone=toolbar" suggestedArtURL="http://www.sciencedirect.com/science/suggestedArt/citeList/pii/S0022460X10002464/eid/1-s2.0-S0022460X10002464/serial" class="S_C_pdfLink big pdf ext_sdlink cLink" style="cursor:pointer" title="Download PDF" >Download PDF
+    <span id="pdfExplanation" class="offscreen">Opens in a new window.  Article suggestions will be shown in a dialog on return to ScienceDirect.</span>
+    </a>
+  </div>
+</li>
+ 
+ 
+
+
+
+
+
+
+
+<li class="exportPopupListitem">
+<div class="pulldown">
+    <div class="exportDivision" title="Export citations">
+    <div class="exportIconText">
+    <div class="icon_exportarticlesci_dir initialImage export_icon" tabindex="0"> &nbsp; </div>
+    <input id="icon_exportarticle" value="Export" name="export" class="listAction export export_general" tabindex="-1" type="button">
+     <span class="downSM_sci_dir exportArrow"></span>
+    </div>
+    <input class='zone' name='zone' type='hidden' value='exportDropDown'/>
+    </div>
+    <div class="menu export_popup hidden" id="export_popup">
+    <div  class='warningIcon' title="Warning Icon" alt="Warning Icon"></div>
+    <form name="exportCite" method=post action=/science?_ob=DownloadURL&_method=finish&_eidkey=1-s2.0-S0022460X10002464&count=1&_docType=FLA&md5=bc0de8c883d50a04469d68d7a7a60215 target="">
+    <input class='zone' name='zone' type='hidden' value='exportDropDown'/>
+            <script language="javascript" type="text/javascript">
+<!--
+
+function checkExportFormat(limit) {
+
+    var msg = "";
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].value == "REFWX") {
+            if (document.exportCite.elements[i].checked) {
+                document.exportCite.setAttribute('target',"RefWorksMain");
+                if (checkLimit()) {
+                    if (limit) {
+                        msg = "It is possible that some users may experience problems when downloading large numbers of citations. If this happens please contact RefWorks support at your regionally hosted site or e-mail support@refworks.com to assist you further.\n\n";
+                    }
+                    msg += "Exporting to RefWorks may take some time, please wait....";
+                    alert(msg);
+                }
+            }
+            else {
+                document.exportCite.setAttribute('target',"");
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+function determineCount(numStr) {
+    var count=1;
+
+    if(numStr.indexOf("-")) {
+        var rangeStr = numStr.split("-");
+
+        if(rangeStr.length == 2) {
+            var highNum = parseInt(rangeStr[1]);
+            var lowNum = parseInt(rangeStr[0]);
+
+            if(highNum >= lowNum) { count = (highNum - lowNum) + 1; }
+        }
+    }
+    return count;
+}
+
+function checkLimit(){
+
+    var selectNum = "";
+    var useSelected = false;
+    var allNum = 0;
+    var count = 0;
+    var rdoc = 0;
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].name == "count") {
+            allNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "NUMBER_LIST") {
+            selectNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "_rdoc") {
+            rdoc = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].value == "selected") {
+            if (document.exportCite.elements[i].checked) {
+                useSelected = true;
+            }
+        }
+    }
+
+    if (useSelected) {
+        selectNum = selectNum.replace(/ /g,"");
+        if(selectNum.indexOf(",")) {
+            var commaList = selectNum.split(",");
+            for(i=0; i < commaList.length; i++) {
+                count += determineCount(commaList[i]);
+            }
+        }
+        else {
+            count += determineCount(selectNum);
+        }
+    }
+    else { 
+        if (rdoc > 0) {
+            count = 1;
+        }
+        else {
+            count = allNum;
+        }
+    }
+
+    if(count > 50) { return true; }
+  
+    return false;
+}
+
+//-->
+</script>
+
+    <div class="exportInfo">
+        <div class="chkboxCount"></div>
+        <div class="exportHelp">
+            <a target="sdhelp" href="/science?_ob=HelpURL&_file=art_export.htm&_btn=Y&_zone=TopNavBar&_origin=article" title="Help (Opens new window)" onClick="var helpWin; helpWin=window.open('/science?_ob=HelpURL&_file=art_export.htm&_btn=Y&_zone=TopNavBar&_origin=article','sdhelp','scrollbars=yes,resizable=yes,directories=no,toolbar=no,menubar=no,status=no,width=984,height=738'); helpWin.focus(); return false">Help</a>
+        </div>
+    </div>
+
+    <div class="expContainer">
+      <ul class="Export_Popup" width="100%">
+        <li class="subHeading"><h3> Direct export </h3></li>
+        <li class="direct_export">
+         
+            <div>
+              <div class="btn_export directExport">
+                <div class="icon_Mendeley" title="Save to Mendeley">&nbsp;</div>
+                <input id="directExport" type="button" value="Save to Mendeley" name="Save to Mendeley" alt="Save to Mendeley" class="mendeleyBT button"/>
+              </div>
+            </div>
+        
+        
+            <div class="btnLine">
+              <div class="btn_export refworks">
+                <div class="icon_Refworks" title="Save to RefWorks">&nbsp;</div>
+                <input id="REFWX" type="button" value="Save to RefWorks" name="Save to RefWorks" alt="Save to RefWorks" class="button refworks"/>
+              </div> 
+            </div>
+            <div class="clear"> </div>
+        
+        </li>
+        <li class="subHeading big"> <h3>Export file</h3></li>
+        <li class="export_radio RIS"><input type="radio" id="RIS" checked name="citation-type" value="RIS"  class="artRadio expRadio RIS">&nbsp;<label for="RIS">RIS&nbsp;(for EndNote, Reference Manager, ProCite)</label>
+        </li>
+        <li class="export_radio"><input type="radio" id="BIBTEX" name="citation-type" value="BIBTEX"  class="artRadio expRadio BIBTEX">&nbsp;<label for="BIBTEX">BibTeX</label>
+        </li>
+        <li class="export_radio"><input type="radio" id="ASCII" name="citation-type" value="ASCII"  class="artRadio expRadio ASCII">&nbsp;<label for="ASCII">Text</label>
+        </li>
+        <li class="export_radio hidden"><input type="radio" id="REFWX" name="citation-type" value="REFWX"  class="artRadio expRadio REFWX">&nbsp;<label for="REFWX">RefWorks Direct Export</label>
+        </li>
+        <li class="subHeading big"><h3>Content</h3></li>
+        <li class="expCitab export_radio"><input type="radio" id="cite" class="cite artRadio expRadio" name="format" value="cite" >&nbsp;<label class="cit" for="cite"> Citation Only </label>
+        </li>
+        <li class="expCitab export_radio citab"><input type="radio" id="cite-abs" class="cite-abs artRadio expRadio" name="format" value="cite-abs" checked>&nbsp;<label class="cab" for="cite-abs"> Citation and Abstract </label>
+        </li>
+        <li class="export_submit">
+            <div class="downBtn export_downBtn">
+               <input type="submit" value="Export" name="export" alt="Export" class="button export_button" id="export_button"/>
+            </div> 
+        </li>
+      </ul>
+
+    </div>
+
+
+        
+        
+            
+         
+
+    </form>
+    </div> 
+</div>    
+</li>
+  
+
+
+
+</ul>
+</div>
+
+<div class="sdSearch" aria-label="Quick search" role="search">
+    <fieldset>
+        <div class="left">
+            <form id="quickSearch" name="qkSrch" method="get" target="_top" action="/science">
+            <input type="hidden" name="_ob" value="QuickSearchURL">
+            <input type="hidden" name="_method" value="submitForm">
+            <input type="hidden" name="_acct" value="C000061256">
+            <input type="hidden" name="searchtype" value="a">
+            <input type="hidden" name="_origin" value="article">
+            <input type="hidden" name="_zone" value="qSearch">
+            <input type="hidden" name="md5" value="a14b473fd47e4d9f94c2745c542962bc">
+            
+            <input  id="quickSearch" type="text" name="qs_all" placeholder="Search ScienceDirect" value="" size="30" maxlength="450" title="Perform a quick search on ScienceDirect"><input type="submit" class="submit" value="" title="Submit quick search"/>
+            
+            <a class="advanced S_C_advanced" href="http://www.sciencedirect.com/science/search" >Advanced search</a>
+            </form>
+        </div>
+    </fieldset>
+</div>
+<div class="clear"></div>
+<div id="erToolbar"></div>
+
+
+<div style="color : #FF0000; font-weight : bold;border:0px solid red;">
+  
+  
+  
+  
+</div>
+
+
+
+
+
+        <!-- PDFKING/PDFCITE -->
+        <div id="pdfModalWindow" class="pdfModalWindow" style="display:none;" onClick="pdfCite.closePopup();"></div>
+        <div id="suggestedPdfList" style="display:none;">
+         
+            <div id="suggestedPdfList" style="display: block;" class="newStyles">
+  <div id="modalBoxDisplay" class="nojs" tabindex="0" role="dialog" aria-labelledby="hdSDSuggestions">
+    <div class="pdfModalWindowMsgBox" id="pdfModalWindowMsgBox" >
+	  <div class = "modal" style="-webkit-box-shadow: none; box-shadow: none; margin-left: 12px; margin-right: 12px;">
+        <div id="displayPdfKing" style="display:block;">
+           <form method="get" name="Tag" action="/science/suggestedArt/export" style="padding:0px; margin:0px;" target="">
+            <input type="hidden" name="pdfDownload" value="download">
+            
+                <input type="hidden" name="PDF_DDM_MAX" value=25>
+             
+            <input type="hidden" name="_retainOrder" value="Y">
+            <input class='zone' name='zone' type='hidden' value='DDM'/>
+            <div class="header" style="height: auto; padding-bottom: 20px; background: rgb(255, 255, 255);">
+            <div class="pdfKingHeading" style="display:block;">Other users also viewed these articles
+            <a class="newCloseBtn" id="pdfKingcloseBtn" href = "#" title = "Close Article Suggestions" alt="Close Article Suggestions"><img src="http://cdn.els-cdn.com/sd/sci_dir/closeButton.png"></a></div></div>
+            <div id="SuggestedArtList" style="min-height: 100px;">
+                <div class="toolBar">
+                <ul class = "group"> 
+                    
+                    <li class="pdfDownloader" style="display: inline-block; padding: 4px 4px 0px 4px; border: 1px solid rgb(201, 201, 201);">
+                        <input value="Download All PDFs" name="pdfDownloadButton" class="listAction iconBg" type="submit" id="multiPdfIcon" aria-describedby="downloadAllPdfAx" style="width:auto; font-size: 14px; color: rgb(49, 108, 157);">
+                        <span class="arrow"></span>
+                        <span id="downloadAllPdfAx" class="hidden" >Opens document download manager</span>
+                    </li>
+                    
+                </ul>
+                </div>
+                
+                <div id="pdfkingContent" style="display:none;">
+                    <div class="popcontent"></div> 
+                    <div id="relatedArtList" data-entitled="Y"></div>
+                </div>
+                
+            </div>
+                
+                <div class="newFooter">
+                <a class = "do-not-show" href="#" onClick="pdfCite.setOptOutFlag('http://www.sciencedirect.com/science/suggestedArt/optOut');" style="cursor: pointer; float: none; line-height: normal;">Do not show again</a>
+                </div>
+          </form>
+        </div>
+        <div id="pdfKingMessage" style="display:none;">
+          <div class="pdfKingHeading" style="display:block;">
+            <span class="downloadMsg">Downloading zip file containing 3 articles...</span>
+            <a class="newCloseBtn" onClick="pdfCite.closePopup();" href = "#" title = "Close Article Suggestions" alt="Close Article Suggestions"><img src="http://cdn.els-cdn.com/sd/sci_dir/closeButton.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        </div>
+        <!-- PDFKING/PDFCITE End -->
+    </div>
+    <div id="articleToolbarDummy"></div>
+  <div style="clear:both;"></div>
+  
+  <div id="leftPane" class="column" aria-label="table of contents" role="navigation">
+    <div id="leftPaneInner">
+        <div>
+        <div id="leftButton">
+            <ul>
+                <li class="tocbutton">
+                    <a class="outline-toggle" title="Open to view article outline"  alt="Open to view article outline" href="#" aria-expanded="false">
+                        <span class="icon outline_big"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="outlineContainer">
+            <a class="closeBt" title="Close">&nbsp;</a>
+            <div id="outline" class="outline">
+              <script type="text/javascript">
+              document.write("<div class='outlineMsg'>Article outline is loading...</div>");
+              </script>
+              <noscript>
+              <div class="infoMsg">
+              <div style="float: left; width: 20px; "><img border="0" src="http://cdn.els-cdn.com/sd/alertIcon.gif" valign="top" alt="Alert message"></div>
+              <div style="padding-left:25px;">JavaScript is disabled on your browser. <br><div style="padding-top:10px;">
+              Please enable JavaScript to use all the features on this page.</div></div>
+              </div>
+              </noscript>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div id="centerPane" class="column">
+    <div class="topBorder"></div>
+    <div id="centerContent" class="centerContent">
+    <div id="centerInner" class="centerInner svBigBox" aria-label="Article" role="main">
+        
+      
+      <noscript>
+      <div class="msgBox" style="margin-top:10px;">
+          <span class="errMsg">
+            <div>JavaScript is disabled on your browser.  Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. <a rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S0022460X10002464?np=y">View full text</a></div>
+         </span>
+      </div><br/>
+      </noscript>
+      <div class="head headTemplate page_fragment_ind">
+
+  
+<div class="publisherLogo">
+  <span class="spElsevierPubIcon"></span>
+</div>
+
+
+  
+    <?xml version="1.0" encoding="UTF-8"?><div xmlns:bk="http://www.elsevier.com/xml/bk/dtd" class="publicationHead"><div class="title"><a title="Go to Journal of Sound and Vibration on ScienceDirect" href="/science/journal/0022460X" queryStr="?zone=centerPane" class="cLink"><span>Journal of Sound and Vibration</span></a></div><p class="volIssue"><a class="S_C_volIss" title="Go to table of contents for this volume/issue" href="/science/journal/0022460X/329/19">Volume 329, Issue 19</a>, 13 September 2010, Pages 4048–4067</p></div>
+  
+    <div class="publicationCover cover2">
+    
+      
+    <a queryStr="?zone=publicationLogo" class="cLink" href="/science/journal/0022460X/329/19">
+      
+    
+    <img alt="Cover image" src="http://ars.els-cdn.com/content/image/1-s2.0-S0022460X10X00128-cov150h.gif" class="toprightlogo" />
+    <noscript><img alt="Cover image" src="http://ars.els-cdn.com/content/image/1-s2.0-S0022460X10X00128-cov150h.gif" class="toprightlogo" /></noscript>
+    </a>
+    
+  </div>
+
+
+</div>
+
+      <div id="frag_1" class="page_fragment auth_frag" data-first="true" data-fid="1"><div class="module_topic_paths"></div><h1 class="svTitle" id="">An adaptive harmonic balance method for predicting the nonlinear dynamic responses of mechanical systems&mdash;Application to bolted structures</h1><ul class="authorGroup noCollab svAuthor"><li><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N662d4b40N66316bb8" data-t="a" data-fn="V." data-ln="Jaumouill&eacute;" data-pos="1" data-tb="">V. Jaumouill&eacute;</a><a title="Affiliation: a" href="#aff1" class="intra_ref auth_aff" id="baff1"><sup>a</sup></a><sup>, </sup><a title="Affiliation: b" href="#aff2" class="intra_ref auth_aff" id="baff2"><sup>b</sup></a>, </li><li><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N662d4b40N66316c48" data-t="a" data-fn="J.-J." data-ln="Sinou" data-pos="2" data-tb="">J.-J. Sinou</a><a title="Affiliation: a" href="#aff1" class="intra_ref auth_aff" id="baff1"><sup>a</sup></a><sup>, </sup><a title="Corresponding author contact information" href="#cor1" id="bcor1" class="intra_ref auth_corr"></a><sup>, </sup><a href="mailto:jean-jacques.sinou@ec-lyon.fr" class="auth_mail" title="E-mail the corresponding author"></a>, </li><li><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N662d4b40N66316cd8" data-t="a" data-fn="B." data-ln="Petitjean" data-pos="3" data-tb="">B. Petitjean</a><a title="Affiliation: b" href="#aff2" class="intra_ref auth_aff" id="baff2"><sup>b</sup></a></li></ul><!--VALIDHTML--><ul class="affiliation authAffil"><li id="aff1"><sup>a</sup> <span id="">Laboratoire de Tribologie et Dynamique des Syst&egrave;mes UMR-CNRS 5513, Ecole Centrale de Lyon, 36 avenue Guy de Collongue, 69134 Ecully Cedex, France</span></li><li id="aff2"><sup>b</sup> <span id="">EADS Innovation Works, 12 rue Pasteur, 92150 Suresnes, France</span></li></ul><!--VALIDHTML--><!--VALIDHTML--><dl class="articleDates"><dd>Received 29 October 2009, Revised 8 April 2010, Accepted 8 April 2010, Available online 5 May 2010</dd><dd class="miscInfo" id="">Handling Editor: H. Ouyang</dd></dl><!--VALIDHTML--><div class="moreInformation"></div><div id="showMoreButtons"></div><div id="ppvPlaceHolder" class="hidden"></div><!--VALIDHTML--><dl class="extLinks"><dd class="doiLink"></dd><dd class="rightsLink"></dd></dl><div class="articleOAlabelForced"></div><div id="refersToAndreferredToBy"><dl id="referredToBy" class="documentThread"><!--Referred To By--></dl></div><!--FRAGMENTEND--><div class="page_fragment_ind auth_frag" data-id="frag_2"></div></div><div id="frag_2" class="page_fragment" data-fid="2"><script>prs.rt("abs_1st_beg");</script><!--VALIDHTML--><hr id="abs_author1" class="artHeader"><div class="abstract svAbstract " data-etype="ab"><h2 class="secHeading" id="author1">Abstract</h2><p id="">Aeronautical structures are commonly assembled with bolted joints in which friction phenomena, in combination with slapping in the joint, provide damping on the dynamic behavior. Some models, mostly nonlinear, have consequently been developed and the harmonic balance method (HBM) is adapted to compute nonlinear response functions in the frequency domain. The basic idea is to develop the response as Fourier series and to solve equations linking Fourier coefficients. One specific HBM feature is that response accuracy improves as the number of harmonics increases, at the expense of larger computational time. Thus this paper presents an original adaptive HBM which adjusts the number of retained harmonics for a given precision and for each frequency value. The new proposed algorithm is based on the observation of the relative variation of an approximate strain energy for two consecutive numbers of harmonics. The developed criterion takes the advantage of being calculated from Fourier coefficients avoiding time integration and is also expressed in a condensation case. However, the convergence of the strain energy has to be smooth on tested harmonics and this constitutes a limitation of the method. Condensation and continuation methods are used to accelerate calculation. An application case is selected to illustrate the efficiency of the method and is composed of an asymmetrical two cantilever beam system linked by a bolted joint represented by a nonlinear LuGre model. The practice of adaptive HBM shows that, for a given value of the criterion, the number of harmonics increases on resonances indicating that nonlinear effects are predominant. For each frequency value, convergence of approximate strain energy is observed. Emergence of third and fifth harmonics is noticed near resonances both on vibratory responses and on approximate strain energy. Parametric studies are carried out by varying the excitation force amplitude and the threshold value of the adaptive algorithm. Maximal amplitudes of vibration and frequency response functions are plotted for three different points of the structure. Nonlinear effects become more predominant for higher force amplitudes and consequently the number of retained harmonics is increased.</p></div><!--VALIDHTML--><div id="embeddedPDF" style="display:none"></div><script>prs.rt("abs_end");</script><div id="SD_BA1P" class="sgfNoTitleBar sgfNoGadgetBorder svDoNotLink"></div><!--VALIDHTML--><hr class="artHeader"><h2 class="svArticle" id="section_lbl1">1. Introduction</h2><p class="svArticle section" id="">The dynamics of mechanical structures is strongly influenced by the presence of riveted or bolted joints in the structure. Indeed structural joints generate energy dissipation through the complex relative motion between two contacting surfaces, commonly referred as frictional slip. Additionally for higher level of excitation, slapping may be encountered. Frictional slip may be analyzed by considering an interface behavior divided in two cases: micro-slip where part of the interface is slipping; and macro-slip where all the interface slips. Then the frictional energy dissipation observed in the slip zone is responsible for the vibration damping attributed to joints <span id="bbib1"><a href="#bib1" id="ancbbib1" class="intra_ref">[1]</a></span>. Gaul et al. <span id="bbib2"><a href="#bib2" id="ancbbib2" class="intra_ref">[2]</a></span> showed that this damping may be larger than material damping and Beards <span id="bbib3"><a href="#bib3" id="ancbbib3" class="intra_ref">[3]</a></span> mentioned that up to 90 percent of the total system damping might be provided by the joints. Thorough reviews about damping in joints may be found in the works of Ungar <span id="bbib4"><a href="#bib4" id="ancbbib4" class="intra_ref">[4]</a></span>, Gaul et al. <span id="bbib2"><a href="#bib2" id="ancbbib2" class="intra_ref">[2]</a></span> and more recently Ibrahim et al. <span id="bbib5"><a href="#bib5" id="ancbbib5" class="intra_ref">[5]</a></span>.</p><!--VALIDHTML--><p class="svArticle section" id="">A better prediction of this damping effect is now an important objective for many aeronautical companies and various complex industrial structures incorporating bolted joints have been investigated <a href="#bib6" id="bbib6" class="intra_ref">[6]</a>, <a href="#bib7" id="bbib7" class="intra_ref">[7]</a>, <a href="#bib8" id="bbib8" class="intra_ref">[8]</a>&#xA0;and&#xA0;<a href="#bib9" id="bbib9" class="intra_ref">[9]</a>. Crocombe et al. <span id="bbib7"><a href="#bib7" id="ancbbib7" class="intra_ref">[7]</a></span> established a relationship between energy dissipated in a joint and the transverse excitation force using a 3D FE model of a bolted joint and then used this relationship in conjunction with the simulation of a FE model of a satellite to estimate the energy dissipated in the joints. In the work of Caignot <span id="bbib9"><a href="#bib9" id="ancbbib9" class="intra_ref">[9]</a></span>, a micro scale model of bolted joints quantifies in a first step the joint dissipation and an equivalent modal damping is deduced in a second step to perform dynamic analysis of the whole studied structure.</p><!--VALIDHTML--><p class="svArticle section" id="">These approaches perform a complex contact analysis giving an insight into the distribution and amount of friction on the interfaces but neglect nonlinear effects in the global dynamic behavior of the assembled bolted structure. They need detailed models, often impractical for dynamic analyses of large structures. Hence constitutive models which use a number of degrees of freedom adapted to structural dynamics may be a suitable and computationally efficient alternative. These models can be divided into lumped models and thin layer element theories <span id="bbib10"><a href="#bib10" id="ancbbib10" class="intra_ref">[10]</a></span>. In lumped models, the effect of joint is considered to be concentrated at a single point and the joint model has no dimension. Several models have been proposed: the Valanis model <span id="bbib11"><a href="#bib11" id="ancbbib11" class="intra_ref">[11]</a></span>, the elasto-slip model <span id="bbib2"><a href="#bib2" id="ancbbib2" class="intra_ref">[2]</a></span>, the LuGre model <span id="bbib2"><a href="#bib2" id="ancbbib2" class="intra_ref">[2]</a></span>, the Iwan model <span id="bbib1"><a href="#bib1" id="ancbbib1" class="intra_ref">[1]</a></span>, the Bouc&ndash;Wen model <span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">[12]</a></span>, models with Jenkins elements <span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">[12]</a></span> and models integrating a cubic stiffness <span id="bbib13"><a href="#bib13" id="ancbbib13" class="intra_ref">[13]</a></span>. The second category, based on thin layer elements, is represented as an element with physical dimensions and specific force&ndash;displacement relation. Ahmadian et al. <span id="bbib10"><a href="#bib10" id="ancbbib10" class="intra_ref">[10]</a></span> developed a generic joint element based on a thin layer element approach and Song et al. <span id="bbib14"><a href="#bib14" id="ancbbib14" class="intra_ref">[14]</a></span> developed an adjusted Iwan beam element incorporating an Iwan model to simulate the dynamics of beam structures.</p><!--VALIDHTML--><p class="svArticle section" id="">Most of these models are nonlinear and require specific methods to compute nonlinear frequency response functions. In order to compute responses to forced excitation, one of the first methods is time integration. Oldfield et al. <span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">[12]</a></span> applied time integration on a bolted structure to simulate hysteresis loops using a Jenkins element model and a Bouc&ndash;Wen model. Other applications on a two beam system were encountered in the works of Gaul et al. <span id="bbib11"><a href="#bib11" id="ancbbib11" class="intra_ref">[11]</a></span> and Miller et al. <span id="bbib15"><a href="#bib15" id="ancbbib15" class="intra_ref">[15]</a></span>. Time integration may be inefficient on lightly damped structures because the transient response may take hundreds of forcing periods at the expense of calculation time and disc storage size. Other alternatives like perturbation methods and the Krylov and Bogoliubov method remain limited to a few degrees of freedom. Heller et al. <span id="bbib16"><a href="#bib16" id="ancbbib16" class="intra_ref">[16]</a></span> applied the Krylov&ndash;Bogoliubov method on a nonlinear system in order to determine equivalent modal parameters and not to compute periodic responses.</p><!--VALIDHTML--><p class="svArticle section" id="">In the frequency domain, the harmonic balance method (HBM) is able to compute periodic responses of nonlinear systems. The basics are to develop the unknown response as a truncated Fourier series and to solve equations linking Fourier coefficients. First mechanical applications can be encountered in the works of Pierre et al. <span id="bbib17"><a href="#bib17" id="ancbbib17" class="intra_ref">[17]</a></span> on a single degree of freedom dry friction damped system and Ferri et al. <span id="bbib18"><a href="#bib18" id="ancbbib18" class="intra_ref">[18]</a></span> on a beam incorporating dry friction. Then a further development of the HBM, named alternating frequency time domain method <span id="bbib19"><a href="#bib19" id="ancbbib19" class="intra_ref">[19]</a></span>, numerically evaluates the Fourier transform of local nonlinearities of the model and does not require to analytically describe nonlinear terms. More recently, other approaches have been proposed, notably the constrained harmonic balance method <span id="bbib20"><a href="#bib20" id="ancbbib20" class="intra_ref">[20]</a></span> which computes solutions for periodic autonomous systems. For dynamic analyses of bolted joints, Gaul et al. <span id="bbib2"><a href="#bib2" id="ancbbib2" class="intra_ref">[2]</a></span> used harmonic balance method for the calculation of an equivalent stiffness and viscous damping in an elasto-slip model. Ren et al. <span id="bbib21"><a href="#bib21" id="ancbbib21" class="intra_ref">[21]</a></span> proposed a general technique for identifying the dynamic properties of nonlinear joints using dynamic test data and used multi-harmonic balance method to identify parameters for a friction joint. These two developments compute hysteresis loops and not periodic responses. The work of Ahmadian et al. <span id="bbib10"><a href="#bib10" id="ancbbib10" class="intra_ref">[10]</a></span> developed a nonlinear generic element formulation for bolted joints and used a cubic nonlinear stiffness to represent softening nonlinear effects. Then frequency response curves of the system are calculated with the HBM allowing to include these curves in a minimization procedure in order to identify parameters of the joint. Only prime harmonics were considered due to experimental considerations.</p><!--VALIDHTML--><p class="svArticle section" id="">One specific HBM feature is that response accuracy improves as the number of harmonics in the truncated Fourier series increases, at the expense of larger computational time. Therefore only harmonics which lead to a significant contribution on dynamic response must be taken into account for a given precision, and their number can strongly vary on a frequency interval.</p><!--VALIDHTML--><p class="svArticle section" id="">This key point has been highlighted for bolted joint dynamics by Ouyang et al. <span id="bbib22"><a href="#bib22" id="ancbbib22" class="intra_ref">[22]</a></span> who studied an experimental two beam bolted system excited at resonance. By increasing importance of friction in the joints (through an increase of the excitation amplitude), measured hysteresis loops became distorted and superharmonics appeared in the frequency spectra of the responses, showing the importance of considering higher order terms in the Fourier development of the response. Only odd harmonics were present suggesting the possibility to use a cubic stiffness in the bolted joint model <a href="#bib10" id="bbib10" class="intra_ref">[10]</a>&#xA0;and&#xA0;<a href="#bib13" id="bbib13" class="intra_ref">[13]</a> and to only consider odd harmonics in the harmonic balance method, usual practice for dry friction system <span id="bbib17"><a href="#bib17" id="ancbbib17" class="intra_ref">[17]</a></span>.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_3"></div><script>prs.rt("abs_1st_end");</script></div>
+
+               
+
+       
+   
+        
+    </div>
+    <div id="footer-area-dummy"></div>
+    <div id="footer-area" aria-label="product support" role="contentinfo">
+      <div id="sdFoot">
+      <div id="footer" aria-label="Footer" role="navigation">	
+  <div class="bottomArticle"></div>
+  <div class="padding">
+    <div id="linkArea">
+      <div class="padding links">
+        <div style="float:left;width:0;height:1px;"></div>
+        <div id="banner-bottom">
+          <a class="S_C_aboutElsevier" href="http://www.elsevier.com" target="_blank" title="Elsevier homepage (opens in a new window)"></a>
+        </div>
+        <ul class="col5">
+<li><a target="_blank" href="http://www.elsevier.com/solutions/sciencedirect">About ScienceDirect</a></li>
+</ul>
+<ul class="col5">
+<li> <a target="_blank" href="http://www.sciencedirect.com/science/contactus">Contact and support</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_blank" href="http://www.elsevier.com/locate/termsandconditions?utm_source=sciencedirect&utm_medium=link&utm_campaign=terms">Terms and conditions</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_blank" href="http://www.elsevier.com/privacypolicy?utm_source=sciencedirect&utm_medium=link&utm_campaign=privacy">Privacy policy</a></li>
+</ul>
+        <div class="clear"></div>
+        <!-- CSAS will be providing the links-->
+      </div>
+      <div class="padding copyright">
+	<hr/>
+        Copyright &copy; 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect&reg; is a registered trademark of Elsevier B.V.
+      </div>
+      <div class="padding" style="padding-bottom:4px;font-size:11px;">
+              Cookies are used by this site. To decline or learn more, visit our <a href="https://www.elsevier.com/solutions/sciencedirect/support/cookies" target="_blank">Cookies</a> page.
+        </div> 
+      
+        
+          <div class="padding links">
+            <div id="goToggleSite"><a class="mLink" site='Mobile' ckNm='Site' lnkOrg='article' lnkZn='footer' href='#'>Switch to Mobile Site</a></div>
+          </div>
+	  <form id="pgReload" method="get" action=""></form>
+        
+      
+    </div>
+  </div>
+</div> <!--footer-->
+
+      </div><!--sdFooter-->
+    </div><!--footer-area-->
+    </div>
+ </div>
+ <div id="rightPane" class="column" aria-label="Related content" role="complementary">
+  <div id="rightOuter" class="rightOuter">
+    <div id="rightInner" class="rightInner">
+       <div class="innerPadding">
+
+    <div id="SD_BIB" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>
+ 
+
+    
+    
+        <div id="recommend_related_articles" class="entry separator related closed">
+            
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Recommended articles</a></h2>
+             
+             <ol id="relArtList"><li class="note"><p>No articles found.</p></li></ol>
+        </div>
+    
+    
+    
+        <div id="cited_by_articles" class="entry separator related closed">
+            <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Citing articles (<span id="hitcount">0</span>)</a></h2>
+            <ol id="citedByList"><li class="note"><p>This article has not been cited.</p></li></ol> 
+        </div>
+    
+    
+    
+        <div id="SD_CRA" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>  
+    
+    
+        
+            <div id="related_book_content" class="entry separator related closed">
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Related book content</a></h2>
+                <ol id="relBkList"><li class="note" style="margin-left:15px;"><p>No articles found.</p></li></ol>
+            </div>
+        
+     
+     
+
+
+
+    
+        <div class="appContainerDummy"></div>
+        <div class="appContainer js_application_content">
+            <ul class="hidden" id="dataRepHolder"></ul>
+            
+                <div id="SD_AT1P" class="boxLink sgfNoTitleBar sgfNoGadgetBorder"></div>
+            
+
+            
+                <div id="SD_FTA1" class="boxLink sgfHorToolbar sgfShowMyApps sgfShowMoreLessApps"></div>
+            
+        </div>
+    
+
+
+</div>
+
+<div class="js_workspace_content popup" aria-live="polite" role="region" aria-label="Overlay" aria-describedby="skuip-3">
+    <a aria-label="close overlay" title="close overlay" alt="close overlay" href="#" id="buttonClose" role="button" class="closeBt">&nbsp;</a>
+    <div class="scrollArea"><div id="workSpaceView"></div></div>
+</div>
+
+    </div><!--rightInner-->
+  </div><!--rightOuter-->
+ </div><!--rightPane-->
+</div><!--page-area-->
+
+
+
+<div style="clear:both;"></div>
+
+<form name="citationInfo" id ="citationInfo" method="POST" action="">
+    <input type="hidden" name="art_citation" value=""/>
+</form>
+
+
+<script src="http://cdn.els-cdn.com/sd/js/sdX_1512R2.js"></script>
+
+
+
+
+<script src="http://cdn.els-cdn.com/sd/js/sd_1512R2.js"></script>
+
+
+
+<script src="http://cdn.els-cdn.com/sd/js/pa_1512R2.js"></script>
+
+
+<script>
+var sciverse="empty";
+var SDM=new Object;
+SDM.tm=new Object;
+SDM.tm.ahm='h'
+
+
+
+SDM.ep=new Object;
+SDM.ep.downloadCsvURL = "http://services.elsevier.com/SDWebExport/export/table/csv";
+SDM.ep.downloadActionURL = "http://www.sciencedirect.com/science/downloadActions/keyEvent/S0022460X10002464/0022460X";
+SDM.ep.gigyaLib="//cdn.gigya.com/JS/socialize.js?apiKey=3__Bt7bHrGM8mjKPwBuOVjWyMi678aF6-PewcnoHJJ6UR1fS5t9NG9RBbKHjE0oA6J";
+SDM.ep.imgUrlPrefix = "http://ars.els-cdn.com/content/image/";
+SDM.ep.thumbimgUrlPrefix = "http://ars.els-cdn.com/content/thumbimage/";
+SDM.ep.mendeleyJS = "https://www.mendeley.com/minified/bookmarklet.js";
+SDM.ep.prDevice = "http://pa.elsevier.com";
+SDM.ep.pru = "http://pa.elsevier.com";
+SDM.ep.ref2ref2by = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S0022460X10002464";
+SDM.ep.staticImgUrlPrefix = "http://cdn.els-cdn.com/sd";
+SDM.ep.urlPrefix = "http://www.sciencedirect.com/science";
+SDM.ep.urlQualifier = "science";
+SDM.ep.urlScheme = "http://www.sciencedirect.com";
+SDM.ep.userActionURL = "http://www.sciencedirect.com/science/UserActions";
+ SDM.helpUrlDomain="http://help.sciencedirect.com/flare"; 
+
+
+
+
+SDM.pm=new Object;
+SDM.pm.cid = '272606';
+SDM.pm.contentFamily = "serial";
+SDM.pm.contentType = "JL";
+SDM.pm.coverDate = '13-Sep-2010';
+
+SDM.pm.doi = '10.1016/j.jsv.2010.04.008';
+
+SDM.doi = '10.1016/j.jsv.2010.04.008';
+SDM.pm.eid = '1-s2.0-S0022460X10002464';
+SDM.pm.entitled = true;
+ SDM.pm.hubEid = '1-s2.0-S0022460X10X00128'; 
+SDM.pm.indexType = '';
+SDM.pm.issnisbn = "0022460X";
+
+SDM.pm.itemWeight = 'FULL-TEXT';
+SDM.pm.mod_cid="";
+SDM.pm.mod_srcTitle="";
+SDM.pm.mod_ISBN = "";
+SDM.pm.pdfEid = '1-s2.0-S0022460X10002464-main.pdf';
+SDM.pm.pdfSize = '1048989';
+SDM.pm.pii = 'S0022460X10002464';
+SDM.pm.prodColor="sci_dir";if(SDM.pm.prodColor=="sci_dir")SDM.pm.prodColor="";
+ SDM.pm.rev = '20150514T013738991851'; 
+ SDM.pm.hrev = 'vH.10'; 
+ SDM.pm.pptURL = 'http://services.elsevier.com/SDWebExport/export/figure/'; 
+
+
+
+
+
+
+
+SDM.pf = new Object;
+SDM.pf.pdfAvail = true;
+SDM.pf.reqAllFrags = true;
+ SDM.pf.maxElemsAllFrags = 12000
+SDM.pf.relatedBkAvail=true;
+SDM.pf.mlktAvail = true;
+SDM.pf.hpccAvail = true;
+SDM.pf.blkSocialLogins=true;
+
+
+SDM.browserUserMsg=true;
+
+
+SDM.pf.citedByScAvail = true;
+SDM.pf.aetEnabled = false;
+ SDM.pf.suggestedArtPDFMaxWait="2000";
+ SDM.pf.pdfMenuAvail=true; 
+
+
+SDM.pf.ads = new Object;
+SDM.pf.ads.leftUrl="/science/advertisement/left/num/379176/mainCat/general/cat/general/acct/0bd0f40f4cc2dddce5edd0eaff64e41c/isn/0022460X/doi/10.1016_j.jsv.2010.04.008/page/article/artOAstatus/N";
+
+
+
+
+SDM.pf.dc = new Object;
+SDM.pf.dc.retry = 10;
+SDM.pf.dc.retryDelay = 300;
+SDM.pf.dc.retryFactor = 1.0;
+SDM.pf.dc.respObj = '';
+
+
+SDM.pf.er = new Object();
+
+
+
+
+
+
+SDM.pf.frag = new Object();
+SDM.pf.frag.fat = 'd2e0100ad2642caf05c6fd0720a45b86009d9e66801ca0f263f7d1a13f29ce552ee9541a96b386c259df5d4be216fa873df2d5cd174bd0423eebc65fb204bcb612dc48c810a16695489d335203239cc6403319cc2c78ed037184ce0adc04588ad9033179741d7f616d35b88170cf35f5989f41e604fd33d0f1a00f63c533ee27ea18a876fe12f8b9e9fc03c14af31426179ce7fad8b41ff4';
+SDM.pf.frag.mapRetry = 20;
+SDM.pf.frag.mapRetryDelay = 2000;
+SDM.pf.frag.mapRetryFactor = 1.1;
+SDM.pf.frag.retry = 5;
+SDM.pf.frag.retryDelay = 2000;
+SDM.pf.frag.foldFactor = 1.5;
+SDM.pf.frag.hashWait = 5000;
+
+
+
+
+
+
+SDM.pf.gadget = new Object();
+SDM.pf.gadget.displayGadgets=true;
+SDM.pf.gadget.sciverseUrlPfx="http://www.sciencedirect.com";
+SDM.pf.gadget.sciverseJsonObject='';
+SDM.pf.gadget.sciverseGadgetDetailsID = "";
+SDM.pf.gadget.svShindigLib="http://sciverse-shindig.elsevier.com/gadgets/js/shindig-container:pubsub-2.js?c=1";
+SDM.pf.gadget.svSciverseLib="http://www.sciencedirect.com/gadgetservices/gadgets/v9/js/SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,ScienceDirectShindigServices.js";
+
+
+
+SDM.pf.mrwmod = new Object();
+SDM.pf.mrwmod.breadCrumbPathURL = "http://www.sciencedirect.com/science/module/breadCrumbPaths/isbn//pii/S0022460X10002464";
+
+SDM.pf.mrwmod.ldrAvail = true;
+
+
+ 
+
+
+SDM.pf.oa = new Object();
+
+
+
+
+
+
+
+
+SDM.pf.ref = new Object();
+SDM.pf.ref.bs = 20;
+SDM.pf.ref.citedByURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+SDM.pf.ref.fd = 300;
+
+SDM.pf.ref.resolveURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S0022460X10002464&_refCnt=25&_docType=article";
+
+
+
+
+
+SDM.pf.toc=new Object;
+SDM.pf.toc.retry = 20;
+SDM.pf.toc.retryDelay = 1000;
+SDM.pf.toc.retryFactor = 1.09;
+SDM.pf.toc.outlineGraphics = false;
+SDM.pf.toc.outlineTab = "";
+
+SDM.pf.toc.urlTOCLink="http://www.sciencedirect.com/science/article/pii/S0022460X10002464";
+SDM.pf.toc.urlTOCLinkQueryStr="?_rdoc=1&_fmt=full&_origin=&md5=22543fb95e34d36391c44b9d9cd72533";
+
+SDM.pf.ddm = new Object();
+SDM.pf.ddm.endpoint = "http://services.elsevier.com/SDWebExport/export/pdfdownload/pdf";
+
+
+
+
+
+
+SDM.si = new Object();
+SDM.si.webUserId = "3742306";
+SDM.si.sds = "847d6e45eaa3df5cde5bcaed6e0cf32cca959c0082eb7fef98aca61a38204d904637064699b1c7a8";
+SDM.si.euidCookieObject='cb664780c961075e55187f24259118ac24e8782c16b14d721141a8102c8c107ea22d6f4e083f6175';
+
+SDM.pageTransKey = "12/05/2015 13:51:19 EST#2850_005#26798#130.108.14.162";
+SDM.pageType = "article_full";
+SDM.tid = "2bea69b8-9b81-11e5-9d1a-00000aacb362";
+SDM.ud = "3742306|<SAInfo><SAId>1056</SAId><SAName>OhioLINK - Consortium</SAName><SANum>S000001056</SANum></SAInfo>|C000061256|87280|IPRANGE";
+SDM.ieVersion="8";
+
+SDM.dac = new Object;
+SDM.svapi = SVApi;
+
+</script>
+
+
+
+
+<script src="http://cdn.els-cdn.com/sd/js/importer-api_1512R2.js.min"></script>
+
+
+<script>
+
+initializeArticlePage();
+</script>
+
+
+
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/14bb862cc5c4.js");
+/*]]>{/literal}*/
+if(typeof SDM != "undefined") {
+  if(SDM.ud) { usabilla_live("data", {"custom": {"ud":SDM.ud} }); }
+  if(SDM.pf&&SDM.pf.oa) {
+    if(SDM.pf.oa.item) { usabilla_live("data", {"custom": {"open_access":SDM.pf.oa.item} });}
+    if(SDM.pf.oa.archive) { usabilla_live("data", {"custom": {"open_archive":SDM.pf.oa.archive} });}
+  }
+}
+</script>
+
+
+<div id="sdpa"></div>
+<script>SDPA.init();</script>
+<div id="appBackground"></div>
+<div id="appDialog" class="files">
+    <div id="header">
+        <h1 class="headline">Download PDFs</h1>
+        <img id="logo" class="sd-bubbles" src="http://cdn.els-cdn.com/sd/sciencedirect.svg" onerror="this.src='http://cdn.els-cdn.com/sd/sciencedirect.png'">
+        <a class="close" id="closeWindow" href="#"><img src="http://cdn.els-cdn.com/sd/img/sprite_parts/close-icon.png"></a>
+    </div>
+    <div id="contentBlk" class="view">
+        <div class="help_button" id="ddmMainHelp"><a class="ddmHelp" target="sdhelp" href="/science?_ob=HelpURL&_file=DM_main.htm&_btn=Y&_zone=TopNavBar&_origin=article" title="Help (Opens new window)" onClick="var helpWin; helpWin=window.open('/science?_ob=HelpURL&_file=DM_main.htm&_btn=Y&_zone=TopNavBar&_origin=article','sdhelp','scrollbars=yes,resizable=yes,directories=no,toolbar=no,menubar=no,status=no,width=984,height=738'); helpWin.focus(); return false">Help</a></div>
+        <div class="help_button" id="ddmNewformatHelp"><a class="ddmHelp" target="sdhelp" href="/science?_ob=HelpURL&_file=DM_newformat.htm&_btn=Y&_zone=TopNavBar&_origin=article" title="Help (Opens new window)" onClick="var helpWin; helpWin=window.open('/science?_ob=HelpURL&_file=DM_newformat.htm&_btn=Y&_zone=TopNavBar&_origin=article','sdhelp','scrollbars=yes,resizable=yes,directories=no,toolbar=no,menubar=no,status=no,width=984,height=738'); helpWin.focus(); return false">Help</a></div>
+        <div id="filesTemplate"></div>
+        <div id="namingTemplate"></div> 
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+
+
+
+
+</body></html>
+
