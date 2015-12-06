@@ -22,28 +22,28 @@ T = 2*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
 Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
-theta10 = np.zeros(N)
-theta20 = np.zeros(N)
+theta10 = 0
+theta20 = 0
 
-def residual(theta1,theta2):
-    Theta1 = np.fft.fft(theta1)
-    Theta2 = np.fft.fft(theta2)
+def residual(theta):
+    Theta1 = np.fft.fft(theta(1))
+    Theta2 = np.fft.fft(theta(2))
     dtheta1 = np.fft.ifft(np.multiply(1j * Omega, Theta1))
     dtheta2 = np.fft.ifft(np.multiply(1j * Omega, Theta2))
     ddtheta1 = np.fft.ifft(np.multiply(-Omega**2, Theta1))
     ddtheta2 = np.fft.ifft(np.multiply(-Omega**2, Theta2))
-    Residual1 = (m1+m2)*l1*ddtheta1+m2*l2*np.cos(theta1-theta2)*ddtheta2+m2*l2*np.sin(theta1-theta2)*dtheta2**2+g*(m1+m2)*np.sin(theta1)
-    Residual1 = np.sum(np.abs((Residual1**2)))
-    Residual2 = m2*l2*ddtheta2+m2*l1*np.cos(theta1-theta2)*ddtheta1-m2*l1*np.sin(theta1-theta2)*dtheta1**2+m2*g*np.sin(theta2)
-    Residual2 = np.sum(np.abs((Residual2**2)))
-    Residual = Residual1+Residual2
-    return Residual
+    R1 = (m1+m2)*l1*ddtheta1+m2*l2*np.cos(theta(1)-theta(2))*ddtheta2+m2*l2*np.sin(theta(1)-theta(2))*dtheta2**2+g*(m1+m2)*np.sin(theta(1))
+    R2 = m2*l2*ddtheta2+m2*l1*np.cos(theta(1)-theta(2))*ddtheta1-m2*l1*np.sin(theta(1)-theta(2))*dtheta2**2+g*(m2)*np.sin(theta(2))
+
+    #R2 =  m2*l2*ddtheta2 + m2*l1*np.cos(theta(1)- theta(2))*ddtheta1-m2*l1*np.sin(theta(1)-theta(2))*dtheta1**2+m2*g*np.sin(theta(2))
+    R = np.sum(np.abs((R1**2+R2**2)))
+    return R
 
 # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
-res1 = minimize(residual,theta10)
-res2 = minimize(residual, theta20)
+res1 = minimize(residual,[1,1])
+#res2 = minimize(residual, theta20)
 theta1Sol = res1.theta1
-theta2Sol = res2.theta2
+#theta2Sol = res2.theta2
 
 # Numerical solution
 # def RHS(X, t=0.0):
