@@ -12,28 +12,29 @@ linewidth = 9.0
 markersize = 20
 # # --------------------------------------------------------------------------------------------------------------------
 # # \ddot{x} + x = sin(2*t)
-# N = 99
-# T = 2*np.pi
-# t = np.linspace(0, T, N+1)
-# t = t[0:-1]
-# f = np.sin(2*t)
-# F = np.fft.fft(f)
-# Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
-# x0 = np.ones(N)
-# xAnalytical = - np.sin(2*t) / 3
-# def residual(x):
-#     X = np.fft.fft(x)
-#     ddx = np.fft.ifft(np.multiply(-Omega**2, X))
-#     R = ddx + x - f
-#     R = np.sum(np.abs((R**2)))
-#     return R
-#
-# res = minimize(residual, x0)
-# print(residual(res.x))
-# plt.figure()
-# plt.plot(t, res.x,
-#          t, xAnalytical)
-# plt.show()
+N = 99
+T = 2*np.pi
+t = np.linspace(0, T, N+1)
+t = t[0:-1]
+f = np.sin(2*t)
+F = np.fft.fft(f)
+Omega = np.fft.fftfreq(N, T/(2*np.pi*N))
+x0 = np.ones(N)
+
+xAnalytical = - np.sin(2*t) / 3
+def residual(x):
+    X = np.fft.fft(x)
+    ddx = np.fft.ifft(np.multiply(-Omega**2, X))
+    R = ddx + x - f
+    R = np.sum(np.abs((R**2)))
+    return R
+
+res = minimize(residual, x0)
+print(residual(res.x))
+plt.figure()
+plt.plot(t, res.x,
+         t, xAnalytical)
+plt.show()
 
 # # --------------------------------------------------------------------------------------------------------------------
 # \ddot{x} + \dot{x} + x = sin(2*t)
