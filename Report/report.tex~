@@ -24,7 +24,7 @@
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
 \author[1]{Anusha Anisetti}
-\author[1]{(Vana Naga Samyuktha Nuthy )}
+\author[1]{(Add your name)}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
 
@@ -44,36 +44,14 @@
 \end{enumerate}
 
 Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
-for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method.
-\subsection{Harmonic Balance Method}
-{Harmonic Balance Method assumes a truncated Fourier series as the solution to a nonlinear system. 
-\begin{equation}
-x(t) = a_0+\sum\limits_{n=1}^N (a_n \cos(n\omega t)+b_n \sin(n \omega t))
-\end{equation}
-
-where $\omega$ is the angular frequency with time period $T$ of the solution and $N$ is the order of truncation. 
-The assumed solution is substituted into the equation of motion to determine the fourier coefficients to form an approximate closed form solution. The high-order harmonic components contribute significantly to whole solution for accuracy, where as a truncated series expantion makes the solution less accurate. If more harmonics are included, it becomes quite complext to solve the algebraic expressions for the Fourier coefficients.
-
-\subsubsection{Advantages}
-\begin{itemize}
-\item{For some equations, a first-order truncated Fourier series can provide accurate results, especially as measure in terms of percentage error for the angular frequency $\omega$}
-\item{Provides a close to accurate solution to steady-state responses.}
-\end{itemize}
-
-\subsubsection{Disdvantages}
-\begin{itemize}
-\item{Harmonic balance procedure cannot be applied to non-conservative oscillators as such systems involve transient behaviors}
-\item{Determining the angular frequency and amplitudes may become algebraically complext.}
-\end{itemize}
-
-In this report, Harmonic balance methodology is first adapted on  linear equations and then extended to basic non-linear equations with closed form solution for comparison and extended to non-linear equations of first and second order. The results are compared with time integrated solutions of the corresponding systems.}
+for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
 
 In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
 
 % ===================================================================
 \section{Numerical Approach}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
 	\caption{Flowchart for numerical approach.}
@@ -161,17 +139,6 @@ We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega =
     \caption{Comparison between HB and analytical result.}
     \label{fig:R3}
 \end{figure}
-% -------------------------------------------------------------------
-\subsection{Double Pendulum}
-Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$ are masses and lengths of pendulum 1 and pendulum 2 respectively, then the equations of motion are
-\begin{equation}
-(m_1+m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2} \cos( \theta_1 - \theta_2 ) + m_2  l_2 \dot{ \theta_2 }^2 \sin( \theta_1 - \theta_2 )+g (m_1+m_2)  \sin( \theta_1) = 0
-\end{equation}
-
-\begin{equation}
-m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  l_1 \dot{\theta_1}^2 \sin(\theta_1 - \theta_2)+m_2 g  \sin(\theta_2) = 0
-\end{equation}
-
 
 % -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
