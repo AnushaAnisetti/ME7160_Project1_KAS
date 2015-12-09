@@ -24,7 +24,7 @@
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
 \author[1]{Anusha Anisetti}
-\author[1]{(Add your name)}
+\author[1]{(Vana Naga Samyuktha Nuthy )}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
 
@@ -161,6 +161,17 @@ We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega =
     \caption{Comparison between HB and analytical result.}
     \label{fig:R3}
 \end{figure}
+% -------------------------------------------------------------------
+\subsection{Double Pendulum}
+Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$ are masses and lengths of pendulum 1 and pendulum 2 respectively, then the equations of motion are
+\begin{equation}
+(m_1+m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2} \cos( \theta_1 - \theta_2 ) + m_2  l_2 \dot{ \theta_2 }^2 \sin( \theta_1 - \theta_2 )+g (m_1+m_2)  \sin( \theta_1) = 0
+\end{equation}
+
+\begin{equation}
+m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  l_1 \dot{\theta_1}^2 \sin(\theta_1 - \theta_2)+m_2 g  \sin(\theta_2) = 0
+\end{equation}
+
 
 % -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
