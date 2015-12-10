@@ -1,4 +1,4 @@
-function twodof_spring_mass_ODEvsFFT()
+function twodof_spring_mass_ODEvsFFT();
 clear all
 close all
 clc
@@ -7,7 +7,7 @@ x0 = [1.5 0 3 0];
 [t,xval] = ode45('twodof_spring_mass',[0 2*pi],x0);
 plot(t,xval(:,1),t,xval(:,2))
 hold on
-function [xp] = twodof_spring_mass(t,x)
+function [xp] = twodof_spring_mass(t,x);
 m1=1; k1=1; m2=1; k2=1;
 xp(1) = x(2);
 xp(2) = -((k1+k2)/m1)*x(1)-(k2/m1)*x(3);
@@ -24,7 +24,9 @@ x0 = [1.57*ones(N,1) 3.14*ones(N,1)];
 x = fminsearch(@R_twodof_spring_mass,x0)
 plot(t,x(:,1),t,x(:,2))
 
-function [R] = R_twodof_spring_mass(x)
+legend('ODE45 oscillating response', 'Harmonic Balance')
+
+function [R] = R_twodof_spring_mass(x);
 m1=1; k1=1; m2=1; k2=1;
 N1 =length(x);
 T = 2*pi;     % delta_t
