@@ -129,12 +129,21 @@ To transfer the time domain data for frequency domain we use \texttt{numpy.fft.f
 This process can be summarized in the following bullet points
 
 \begin{itemize}
+
+\item An initial guess for response in time domain for a particular time period discretized in required number of samples is made. In general, this assumed solution is zero values (not necessarily).
+\item The above initial conditions are then transformed into frequency domain. 
+\item Using the properties of fourier series, obtain the derivatives of the responses.
+\item Transform the derivatives back into time domain and substitute into the equations of motion.
+\item Check if the harmonics are balanced, by minimizing the cost function of the residuals from the equations of motion. 
+\item Re-iterate until minimization algorithm meets the convergence criteria tolerance.
+=======
 \item An initial guess for response in time domain.
 \item Transform the initial guess into frequency domain. 
 \item Obtain the derivatives of the responses in the frequency domain.
 \item Transform the derivatives back into time domain
 \item Minimizing the cost function of the residuals from the equations of motion 
 \item Re-iterate until minimization algorithm is below it's convergence criteria tolerance.
+>>>>>>> refs/remotes/origin/master
 \end{itemize}
 
 To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
@@ -172,7 +181,23 @@ The comparison between the HB and analytical result for Equation \eqref{eq:1GE} 
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
+% -------------------------------------------------------------------
 
+\subsection{Linear System}
+The governing equation is defined as
+\begin{equation}\label{eq:samGE}
+	\ddot{x} + x = \sin 2t
+\end{equation}
+ 
+The solution obtained from this equation can be used to compare with  the harmonic balance result. The solution for Equation \eqref{eq:samGE} is calculated as
+
+\begin{equation}
+	x(t) = -0.33 \sin 2t
+\end{equation}
+
+The following figure\ref{fig:samR1} shows the comparison results between the Harmonic Balance Method and analytical result for Equation \eqref{eq:samGE}. As it can be clearly seen, the Harmonic Balance Method results meets absolutely with analytical solution of the system.
+
+<<<<<<< HEAD
 The convergence results for the residual is shown in Figure \ref{fig:R1_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian. This Jacobian is used to define the direction the optimizer goes to update the design variables, vector $x$ in time. As can be seen here, if the simulation takes a long time to converge, the finite difference step is going to take a significant amount of time and resources.
 
 \begin{figure}[h]
@@ -182,6 +207,14 @@ The convergence results for the residual is shown in Figure \ref{fig:R1_converge
 	\label{fig:R1_convergence}
 \end{figure}
 
+=======
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8.0 cm]{figure/fig1.eps}
+    \caption{Comparison between Harmonic Balance Method and analytical result.}
+    \label{fig:samR1}
+\end{figure}
+>>>>>>> origin/AnushaAnisetti-master
 % -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}
 For the second demonstration example, we looked at problem 2.45 on page 140 of Applied Nonlinear Dynamics (Nayfeh) book. The governing equation for this problem is shown in Equation \eqref{eq:2GE}
@@ -262,35 +295,50 @@ m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  
 The equations of motion are written in state space form 
 
 \begin{equation}
-	\dot{u1} = u2
+	\dot{u_1} = u_2
 \end{equation}
 
 \begin{equation}
-	\dot{u2} = \frac{ed-bf}{ad-bc}	
+	\dot{u_2} = \frac{ed-bf}{ad-bc}	
 \end{equation}
 \begin{equation}
-	\dot{v1} = v2 
+	\dot{v_1} = v_2 
 \end{equation}
 \begin{equation}
-	\dot{v2} = \frac{af-ce}{ad-bc}	
+	\dot{v_2} = \frac{af-ce}{ad-bc}	
 \end{equation}
 
 where $a = (m_1+m_2)l_1$, $b= m_2*l_2*cos(u_1-v_1)$, $c=m_2*l_1*cos(u_1-v_1)$, $d = m_2 l_2$, $e= -m_2 l_2 v_2^2 sin(u_1-u_2)-g(m_1+m_2) sin(u_1)+(c_1+c_2) (l_1^2) u_2+c_2 l_1 l_2 v_2$ and $f = m_2 l_1 u_2^2 sin(u_1-v_1)-m_2 g sin(v_1)+ sin(\omega t)+c_2 v2+c_2 l_1 l_2 u_2+c_2 (l_2^2) v_2$
 
-The results show chaotic behaviour of the double pendulum as expected.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=9.00cm]{figure/figure_1.eps}
-	\caption{Response $\theta_1$ }
-	\label{fig:theta1}
+	\begin{subfigure}[h]{8.0 cm}
+		\includegraphics[width=8.0 cm]{figure/P11.png}
+		\caption{n = 9}
+	\end{subfigure}
+	\begin{subfigure}[h]{8.0 cm}
+        \includegraphics[width=8.0 cm]{figure/P12.png}
+		\caption{n = 99}
+    \end{subfigure}
+    \caption{Comparison between HB and analytical result.}
+    \label{fig:Res1}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=9.00cm]{figure/figure_2.eps}
-	\caption{Response  $\theta_2$  }
-	\label{fig:theta2}
+	\begin{subfigure}[h]{8.0 cm}
+		\includegraphics[width=8.0 cm]{figure/P21.png}
+		\caption{n = 9}
+	\end{subfigure}
+	\begin{subfigure}[h]{8.0 cm}
+        \includegraphics[width=8.0 cm]{figure/P22.png}
+		\caption{n = 99}
+    \end{subfigure}
+    \caption{Comparison between HB and analytical result.}
+    \label{fig:Res1}
 \end{figure}
 
+The results from Harmonic balance method is in good agreement with the time integrated response for low number and high number of harmonics. 
 
 
 % -------------------------------------------------------------------
@@ -396,7 +444,7 @@ In this project, Harmonic balance method is applied to linear and non-linear equ
 
 Responses from linear and moderately non-linear systems using Harmonic Balance method converge to the time-integrated response in due course of time. This is because Harmonic balance method results in steady-state reponse and it is required to let the transient response of the time integration to die of before comparing the results. Taking more frequency components into account, Harmonic Balance Method provides better approximation to the response. 
 
-For some nonlinear systems that are highly non-linear and behave chaotically such as double pendulum, Harmonic Balance Method solution requires higher harmonics at the cost of computational time. Overall, Harmonic balance method is efficient in obtaining closed form steady-state solution to the non-linear equations.
+Overall, Harmonic balance method is efficient in obtaining closed form steady-state solution to the non-linear equations.
 
 % ===================================================================
 \newpage
