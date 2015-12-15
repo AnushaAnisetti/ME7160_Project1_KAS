@@ -24,9 +24,24 @@
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
 \author[1]{Anusha Anisetti}
-\author[1]{(Add your name)}
+\author[1]{Vana Naga Samyuktha Nuthy}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
+
+\usepackage[procnames]{listings}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
 
 \begin{document}
 
@@ -35,18 +50,95 @@
 \abstract{}
 % ===================================================================
 \section{Introduction}
-{Nonlinear oscillations problem are important issues in physical science, mechanical structures and other engineering researches. Nonlinear systems display different behaviors than linear systems. They can exhibit
+Nonlinear oscillations problem are important phenomena in physical science, mechanical structural analysis and many other engineering application. Nonlinear systems display different behaviours than linear systems. They can exhibit
+
 \begin{enumerate}  
-\item  multiply steady state solutions, stable and unstable, in response to the same inputs (bifurcation),
+\item  multiple steady state solutions, stable and unstable, depending on the control parameters (bifurcation),
 \item  response at frequencies other than forcing frequency
-\item  hysterisis with jump phenomenon, that includes discontinuous variations in the response of the system when system parameters are varied,
 \item  irregular motions that are extremely sensitive to the initial conditions (chaos).
 \end{enumerate}
 
-Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
-for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method. 
+Therefore, studying nonlinearieties is of extreme importance. As most of the real systems exhibit nonlinear responses due to material and geometric nonlinearities, predicting their response can become a critical task. There are different approximation techniques to determine the steady state solution of these systems in time domain. Drawback of such time-domain methods is the excessive need for computational time and resources due to expensive time integrations involved. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions for different configurations are needed. Therefore, there is a need for techniques that can predict the limit cycle oscillations of nonlinear systems without the need to expensive time integration methods. Harmonic Balance method is one of these approaches that uses frequency domain analysis to calculate the steady-state response of the system. 
 
-In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
+\subsection{Harmonic Balance Method}
+
+Harmonic Balance Method assumes a truncated Fourier series as the solution to a nonlinear system. 
+
+\begin{equation}
+x(t) = a_0+\sum\limits_{n=1}^N (a_n \cos(n\omega_0 t)+b_n \sin(n \omega_0 t))
+\end{equation}
+
+where $\omega_0$ is the angular frequency with time period $T$ of the solution, $N$ is the number of harmonics, $a_n$ and $b_n$ are the coefficients of Fourier transform, and $t$ is time. The assumed solution is substituted into the equation of motion to determine the Fourier coefficients to form an approximate closed form solution. There is no rule of thumb for choosing $N$, as a matter of fact this is a trial and error process. If it is known that the system is going to exhibit high frequency oscillations, the number of harmonics ($N$) need to be increases to be able to capture the response.
+
+\subsubsection{Advantages}
+\begin{itemize}
+\item{For some equations, a first-order truncated Fourier series can provide accurate results, especially as measure in terms of percentage error for the angular frequency $\omega$}
+\item{Provides a close to accurate solution to steady-state responses.}
+\item Simulation cost is much less compared to the equivalent time integration for systems with few (less than 100) degree of freedom.
+\end{itemize}
+
+\subsubsection{Disdvantages}
+\begin{itemize}
+\item when applied to a system white many degrees of freedom, the HB needs to be done for each of the DOF. This can become extremely expensive.
+\item The resulting matrices for HB are not sparse anymore. Storing these can become problematic.
+\end{itemize}
+
+In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.
+
+% ===================================================================
+\section{Numerical Approach}
+
+To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the governing equations in terms of a residual function as follows
+
+\begin{equation}\label{eq:GE}
+	\mathcal{R} = F(\ddot{x}, \dot{x}, x, f)
+\end{equation}
+
+Where $\ddot{x}$ is the acceleration, $\dot{x}$ is velocity, $x$ is displacement, and $f$ are the rest of variable in the equation of motion. $F$ is the general functional form of the governing equations. We then assume a solution $\bar{x}$. If $\bar{x}$ is indeed the solution of the equation of motion, when substituting it in the residual equation of \eqref{eq:GE} we should get zero. However, since it is an assumed solution, the residual won't be zero. By updating $\bar{x}$ is an optimization loop to minimize $\mathcal{R}^2$, we can get the solution of Equation \eqref{eq:GE}. In this process, it is required to calculate $\ddot{x}$ and $\dot{x}$ for $\mathcal{R}$. This is done in frequency domain.
+
+The variable $x$ in the time domain can be approximated as follows in the frequency domain.
+
+\begin{equation}\label{eq:displacement}
+	x(t) = 
+	\sum_{k=-\infty}^{\infty}
+	X_k \cdot e^{i \omega_0 k t} \quad , \quad \omega_0 = \frac{2\pi}{T}
+\end{equation}
+
+The time derivatives are calculated by differentiating above equation with respect to time.
+
+\begin{subequations}
+\begin{equation}\label{eq:velocity}
+	\dot{x}(t) = \sum_{k=-\infty}^{\infty} i \omega_k X_k \cdot e^{i \omega_k t}
+\end{equation}
+\begin{equation}\label{eq:acceleration}
+	\ddot{x}(t) = \sum_{k=-\infty}^{\infty} -\omega_k^2 X_k \cdot e^{i \omega_k t}
+\end{equation}
+\end{subequations}
+
+By substituting Equations \eqref{eq:displacement}, \eqref{eq:velocity}, and \eqref{eq:acceleration} into Equation \eqref{eq:GE}, we can minimize the residual based on a guessed displacement. The flow chart for this is shown in Figure \ref{fig:flowchart}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
+	\caption{Flowchart for numerical approach.}
+	\label{fig:flowchart}
+\end{figure}
+
+To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method. This process is shown in Figure \ref{fig:flowchart}.
+
+This process can be summarized in the following bullet points
+
+\begin{itemize}
+\item An initial guess for response in time domain.
+\item Transform the initial guess into frequency domain. 
+\item Obtain the derivatives of the responses in the frequency domain.
+\item Transform the derivatives back into time domain
+\item Minimizing the cost function of the residuals from the equations of motion 
+\item Re-iterate until minimization algorithm is below it's convergence criteria tolerance.
+\end{itemize}
+
+To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
+
 % ===================================================================
 \section{Demonstration Results}
 In this section, we apply the method of harmonic balance to different linear and non-linear problems. For the cases where analytical results are not available, we use numerical time integration to verify the results where it shows a good comparison. It should be noted that since the harmonic balance method is used to calculate the limit cycle oscillations of the system. Therefore, it is needed to let the transient part of time integration to die out. Only after this point, the two results match.
@@ -81,6 +173,15 @@ The comparison between the HB and analytical result for Equation \eqref{eq:1GE} 
     \label{fig:R1}
 \end{figure}
 
+The convergence results for the residual is shown in Figure \ref{fig:R1_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian. This Jacobian is used to define the direction the optimizer goes to update the design variables, vector $x$ in time. As can be seen here, if the simulation takes a long time to converge, the finite difference step is going to take a significant amount of time and resources.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_31.eps}
+	\caption{Convergence plot.}
+	\label{fig:R1_convergence}
+\end{figure}
+
 % -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}
 For the second demonstration example, we looked at problem 2.45 on page 140 of Applied Nonlinear Dynamics (Nayfeh) book. The governing equation for this problem is shown in Equation \eqref{eq:2GE}
@@ -105,6 +206,15 @@ In above equation, we chose $\mu = 0.1$, $g = 9.81$, $R = 1.0$, and $\alpha = 1$
     \label{fig:R2}
 \end{figure}
 
+The convergence results for the residual is shown in Figure \ref{fig:R2_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_32.eps}
+	\caption{Convergence plot.}
+	\label{fig:R2_convergence}
+\end{figure}
+
 % -------------------------------------------------------------------
 \subsection{Parametrically excited Duffing Oscillator}
 We looked at the applicability of HB in handling the nonlinear, force, parametrically excited Duffing oscillator. The governing equation of this system is shown in Equation \eqref{eq:3GE}.
@@ -115,7 +225,7 @@ We looked at the applicability of HB in handling the nonlinear, force, parametri
 
 We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega = 2.0$ for the system parameters. Like the previous example, we used time integration to verify the results of HB method as shown in Figure \ref{fig:R3}. As seen here, similar convergence trend is observed for parametrically excited nonlinear oscillating system for different number of harmonics.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
 		\includegraphics[width=8.0 cm]{figure/3N20.eps}
@@ -129,15 +239,45 @@ We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega =
     \label{fig:R3}
 \end{figure}
 
+The convergence results for the residual is shown in Figure \ref{fig:R3_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_33.eps}
+	\caption{Convergence plot.}
+	\label{fig:R3_convergence}
+\end{figure}
+
+% -------------------------------------------------------------------
+\subsection{Double Pendulum}
+Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$ are masses and lengths of pendulum 1 and pendulum 2 respectively, then the equations of motion are
+\begin{equation}
+(m_1+m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2} \cos( \theta_1 - \theta_2 ) + m_2  l_2 \dot{ \theta_2 }^2 \sin( \theta_1 - \theta_2 )+g (m_1+m_2)  \sin( \theta_1) = 0
+\end{equation}
+
+\begin{equation}
+m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  l_1 \dot{\theta_1}^2 \sin(\theta_1 - \theta_2)+m_2 g  \sin(\theta_2) = 0
+\end{equation}
+
+
 % -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
+In this work, piston theory \cite{ashley2012piston} is applied to a double-wedged lifting surface with pitching degree of freedom as shown in Figure \ref{fig:doubleWedgedAirfoil}. This work uses third-order piston theory to compute unsteady effects behind shock waves and expansion fans and a stiffening spring to the structure. This method of computing unsteady aerodynamic effects delivered highly accurate results when compared to computational fluid dynamics solutions \cite{mcnamara2011aeroelastic}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9.00cm]{figure/doubleWedgeAirfoil.png}
+	\caption{Double-wedge lifting surface.}
+	\label{fig:doubleWedgedAirfoil}
+\end{figure}
+
 The governing equation can be written as
 
 \begin{equation}\label{eq:GE}
 	m\ddot{\theta} + k \theta = f(\theta, t)
 \end{equation}
 
-where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. We used the piston theory to calculate the pressure distribution on the airfoil \cite{thuruthimattam2002aeroelasticity}.
+where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. We used the piston theory to calculate the pressure distribution on the airfoil.
 
 \begin{equation}\label{eq:pistonTheory}
 	\frac{P(x, t)}{P_\infty} = \left( 1+ \frac{\gamma - 1}{2} \frac{v_n}{a_\infty} \right)^{\frac{2 \gamma}{\gamma - 1}}
@@ -218,6 +358,22 @@ For verification, the harmonic balance results are compared with the numerical i
 \end{figure}
 
 % ===================================================================
-\bibliographystyle{unsrt}
+\newpage
+\section{Appendices}
+\lstinputlisting{code/31.py}
+\newpage
+\lstinputlisting{code/32.py}
+\newpage
+\lstinputlisting{code/33.py}
+\newpage
+\lstinputlisting{code/34.py}
+\newpage
+\lstinputlisting{code/main.py}
+\newpage
+\lstinputlisting{code/aerodynamic.py}
+\newpage
+\lstinputlisting{code/getShape.py}
+\newpage
+\bibliographystyle{aiaa}
 \bibliography{ref}
 \end{document}
