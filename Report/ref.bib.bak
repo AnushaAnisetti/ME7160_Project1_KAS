@@ -37,11 +37,13 @@
   year={2011}
 }
 
-@article{thuruthimattam2002aeroelasticity,
-  title={Aeroelasticity of a generic hypersonic vehicle},
-  author={Thuruthimattam, BJ and Friedmann, PP and McNamara, JJ and Powell, KG},
-  journal={AIAA Paper},
-  volume={1209},
-  pages={2002},
-  year={2002}
+@article{ashley2012piston,
+  title={Piston theory-a new aerodynamic tool for the aeroelastician},
+  author={Ashley, Holt},
+  journal={Journal of the Aeronautical Sciences},
+  volume={23},
+  number={12},
+  year={1956},
+  pages={1109--1118}
 }
+

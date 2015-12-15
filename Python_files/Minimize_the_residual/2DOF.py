@@ -20,7 +20,6 @@ k1 = 1
 k2 = 1
 c1 = 1
 
-
 N = 99
 T = 5*2*np.pi
 t = np.linspace(0, T, N+1)
