@@ -35,7 +35,7 @@
 \abstract{}
 % ===================================================================
 \section{Introduction}
-{Nonlinear oscillations problem are important issues in physical science, mechanical structures and other engineering researches. Nonlinear systems display different behaviors than linear systems. They can exhibit
+Nonlinear oscillations problem are important issues in physical science, mechanical structures and other engineering researches. Nonlinear systems display different behaviors than linear systems. They can exhibit
 \begin{enumerate}  
 \item  multiply steady state solutions, stable and unstable, in response to the same inputs (bifurcation),
 \item  response at frequencies other than forcing frequency
@@ -68,17 +68,51 @@ The assumed solution is substituted into the equation of motion to determine the
 
 In this report, Harmonic balance methodology is first adapted on  linear equations and then extended to basic non-linear equations with closed form solution for comparison and extended to non-linear equations of first and second order. The results are compared with time integrated solutions of the corresponding systems.}
 
-In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.}
+In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.
 
 % ===================================================================
 \section{Numerical Approach}
 
+To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the residual function as
+
+\begin{equation}\label{eq:GE}
+	\mathcal{R} = F(\ddot{x}, \dot{x}, x, f)
+\end{equation}
+
+Where $\ddot{x}$ is the acceleration, $\dot{x}$ is velocity, $x$ is displacement, and $f$ are the rest of variable in the equation of motion. $F$ is the general functional form of the governing equations. We then assume a solution $\bar{x}$. If $\bar{x}$ is indeed the solution of the equation of motion, when substituting it in the residual equation of \eqref{eq:GE} we should get zero. However, since it is an assumed solution, the residual won't be zero. By updating $\bar{x}$ is an optimization loop to minimize $\mathcal{R}^2$, we can get the solution of Equation \eqref{eq:GE}. In this process, it is required to calculate $\ddot{x}$ and $\dot{x}$ for $\mathcal{R}$. This is done in frequency domain.
+
+The variable $x$ in the time domain can be approximated as follows in the frequency domain.
+
+\begin{equation}\label{eq:displacement}
+	x(t) = 
+	\sum_{k=-\infty}^{\infty}
+	X_k \cdot e^{i \omega_0 k t} \quad , \quad \omega_0 = \frac{2\pi}{T}
+\end{equation}
+
+The time derivatives are calculated by differentiating above equation with respect to time.
+
+\begin{subequations}
+\begin{equation}\label{eq:velocity}
+	\dot{x}(t) = \sum_{k=-\infty}^{\infty} i \omega_k X_k \cdot e^{i \omega_k t}
+\end{equation}
+\begin{equation}\label{eq:acceleration}
+	\ddot{x}(t) = \sum_{k=-\infty}^{\infty} -\omega_k^2 X_k \cdot e^{i \omega_k t}
+\end{equation}
+\end{subequations}
+
+By substituting Equations \eqref{eq:displacement}, \eqref{eq:velocity}, and \eqref{eq:acceleration} into Equation \eqref{eq:GE}, we can minimize the residual based on a guessed displacement. The flow chart for this is shown in Figure \ref{fig:flowchart}.
+%
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
 	\caption{Flowchart for numerical approach.}
 	\label{fig:flowchart}
 \end{figure}
+%
+
+To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method.
+
+To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
 
 % ===================================================================
 \section{Demonstration Results}
