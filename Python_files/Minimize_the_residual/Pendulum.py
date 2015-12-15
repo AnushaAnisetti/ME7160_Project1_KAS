@@ -70,14 +70,13 @@ def RHS(X, t=0.0):
 ta = np.linspace(0.0, T, 20*N)
 sol = odeint(RHS, [0, 0, 0, 0], ta)
 print(sol)
-# # plt.figure(figsize=(30,15))
+
 plt.figure()
 plt.plot(t, xSol1, 'k',
          ta, sol[:, 0], 'r--',
          lw=linewidth, ms=markersize)
-plt.legend(['FFt', 'Analytical'])
 plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
-plt.title('x1')
+plt.title('theta1')
 plt.xlabel('Time')
 plt.ylabel('Displacement')
 plt.show()
@@ -86,9 +85,8 @@ plt.figure()
 plt.plot(t, xSol2, 'k',
          ta, sol[:, 2], 'r--',
          lw=linewidth, ms=markersize)
-plt.legend(['FFt', 'Analytical'])
 plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
-plt.title('x2')
+plt.title('theta2')
 plt.xlabel('Time')
 plt.ylabel('Displacement')
 plt.show()
