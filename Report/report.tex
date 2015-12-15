@@ -80,6 +80,16 @@ In this report, Harmonic balance methodology is first build on closed form equat
 	\label{fig:flowchart}
 \end{figure}
 
+Harmonic Balance algorithm is iterative and works as illustrated in \ref{fig:flowchart}.
+\begin{itemize}
+\item An initial guess for response in time domain for a particular time period discretized in required number of samples is made. In general, this assumed solution is zero values (not necessarily).
+\item The above initial conditions are then transformed into frequency domain. 
+\item Using the properties of fourier series, obtain the derivatives of the responses.
+\item Transform the derivatives back into time domain and substitute into the equations of motion.
+\item Check if the harmonics are balanced, by minimizing the cost function of the residuals from the equations of motion. 
+\item Re-iterate until minimization algorithm is below it's convergence criteria tolerance.
+\end{itemize}
+
 % ===================================================================
 \section{Demonstration Results}
 In this section, we apply the method of harmonic balance to different linear and non-linear problems. For the cases where analytical results are not available, we use numerical time integration to verify the results where it shows a good comparison. It should be noted that since the harmonic balance method is used to calculate the limit cycle oscillations of the system. Therefore, it is needed to let the transient part of time integration to die out. Only after this point, the two results match.
