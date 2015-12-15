@@ -24,7 +24,7 @@
 \title{Aeroelastic Analysis of Hypersonic Double-wedge Lifting Surface}
 \author[1]{Koorosh Gobal}
 \author[1]{Anusha Anisetti}
-\author[1]{(Vana Naga Samyuktha Nuthy )}
+\author[1]{Vana Naga Samyuktha Nuthy}
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
 
@@ -35,45 +35,45 @@
 \abstract{}
 % ===================================================================
 \section{Introduction}
-Nonlinear oscillations problem are important issues in physical science, mechanical structures and other engineering researches. Nonlinear systems display different behaviors than linear systems. They can exhibit
+Nonlinear oscillations problem are important phenomena in physical science, mechanical structural analysis and many other engineering application. Nonlinear systems display different behaviours than linear systems. They can exhibit
+
 \begin{enumerate}  
-\item  multiply steady state solutions, stable and unstable, in response to the same inputs (bifurcation),
+\item  multiple steady state solutions, stable and unstable, depending on the control parameters (bifurcation),
 \item  response at frequencies other than forcing frequency
-\item  hysterisis with jump phenomenon, that includes discontinuous variations in the response of the system when system parameters are varied,
 \item  irregular motions that are extremely sensitive to the initial conditions (chaos).
 \end{enumerate}
 
-Hence studying nonlinearieties is of extreme importance. As most of the real systems are modeled with non-linear differential equations, solving them is a critical task. There are many approximation methods to determine steady state solution in time domain. The drawback of such time-domain methods is the excessive need for computational time and resources. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions
-for different confgurations is needed. However, simulation in frequency domain eases the problem by transforming differential equations into algebraic complex equations and reduces the simulation cost by orders of magnitude. One such frequency domain approach to find steady state solution is the Harmonic Balance (HB) method.
+Therefore, studying nonlinearieties is of extreme importance. As most of the real systems exhibit nonlinear responses due to material and geometric nonlinearities, predicting their response can become a critical task. There are different approximation techniques to determine the steady state solution of these systems in time domain. Drawback of such time-domain methods is the excessive need for computational time and resources due to expensive time integrations involved. This can become a major bottle neck in design space exploration efforts of such systems where mutiple solutions for different configurations are needed. Therefore, there is a need for techniques that can predict the limit cycle oscillations of nonlinear systems without the need to expensive time integration methods. Harmonic Balance method is one of these approaches that uses frequency domain analysis to calculate the steady-state response of the system. 
+
 \subsection{Harmonic Balance Method}
-{Harmonic Balance Method assumes a truncated Fourier series as the solution to a nonlinear system. 
+
+Harmonic Balance Method assumes a truncated Fourier series as the solution to a nonlinear system. 
+
 \begin{equation}
-x(t) = a_0+\sum\limits_{n=1}^N (a_n \cos(n\omega t)+b_n \sin(n \omega t))
+x(t) = a_0+\sum\limits_{n=1}^N (a_n \cos(n\omega_0 t)+b_n \sin(n \omega_0 t))
 \end{equation}
 
-where $\omega$ is the angular frequency with time period $T$ of the solution and $N$ is the order of truncation. 
-The assumed solution is substituted into the equation of motion to determine the fourier coefficients to form an approximate closed form solution. The high-order harmonic components contribute significantly to whole solution for accuracy, where as a truncated series expantion makes the solution less accurate. If more harmonics are included, it becomes quite complext to solve the algebraic expressions for the Fourier coefficients.
+where $\omega_0$ is the angular frequency with time period $T$ of the solution, $N$ is the number of harmonics, $a_n$ and $b_n$ are the coefficients of Fourier transform, and $t$ is time. The assumed solution is substituted into the equation of motion to determine the Fourier coefficients to form an approximate closed form solution. There is no rule of thumb for choosing $N$, as a matter of fact this is a trial and error process. If it is known that the system is going to exhibit high frequency oscillations, the number of harmonics ($N$) need to be increases to be able to capture the response.
 
 \subsubsection{Advantages}
 \begin{itemize}
 \item{For some equations, a first-order truncated Fourier series can provide accurate results, especially as measure in terms of percentage error for the angular frequency $\omega$}
 \item{Provides a close to accurate solution to steady-state responses.}
+\item Simulation cost is much less compared to the equivalent time integration for systems with few (less than 100) degree of freedom.
 \end{itemize}
 
 \subsubsection{Disdvantages}
 \begin{itemize}
-\item{Harmonic balance procedure cannot be applied to non-conservative oscillators as such systems involve transient behaviors}
-\item{Determining the angular frequency and amplitudes may become algebraically complext.}
+\item when applied to a system white many degrees of freedom, the HB needs to be done for each of the DOF. This can become extremely expensive.
+\item The resulting matrices for HB are not sparse anymore. Storing these can become problematic.
 \end{itemize}
-
-In this report, Harmonic balance methodology is first adapted on  linear equations and then extended to basic non-linear equations with closed form solution for comparison and extended to non-linear equations of first and second order. The results are compared with time integrated solutions of the corresponding systems.}
 
 In this report, Harmonic balance methodology is first build on closed form equation for structural response of linear equations and then extended to basic non-linear equations and non-linear equations with parametric excitations. The results are compared with time integrated solutions of the corresponding systems.
 
 % ===================================================================
 \section{Numerical Approach}
 
-To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the residual function as
+To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the governing equations in terms of a residual function as follows
 
 \begin{equation}\label{eq:GE}
 	\mathcal{R} = F(\ddot{x}, \dot{x}, x, f)
@@ -110,19 +110,20 @@ By substituting Equations \eqref{eq:displacement}, \eqref{eq:velocity}, and \eqr
 \end{figure}
 %
 
-To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method.
+To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method. This process is shown in Figure \ref{fig:flowchart}.
 
-To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
+This process can be summarized in the following bullet points
 
-Harmonic Balance algorithm is iterative and works as illustrated in \ref{fig:flowchart}.
 \begin{itemize}
-\item An initial guess for response in time domain for a particular time period discretized in required number of samples is made. In general, this assumed solution is zero values (not necessarily).
-\item The above initial conditions are then transformed into frequency domain. 
-\item Using the properties of fourier series, obtain the derivatives of the responses.
-\item Transform the derivatives back into time domain and substitute into the equations of motion.
-\item Check if the harmonics are balanced, by minimizing the cost function of the residuals from the equations of motion. 
+\item An initial guess for response in time domain.
+\item Transform the initial guess into frequency domain. 
+\item Obtain the derivatives of the responses in the frequency domain.
+\item Transform the derivatives back into time domain
+\item Minimizing the cost function of the residuals from the equations of motion 
 \item Re-iterate until minimization algorithm is below it's convergence criteria tolerance.
 \end{itemize}
+
+To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
 
 % ===================================================================
 \section{Demonstration Results}
