@@ -38,14 +38,19 @@ def residual(x):
     dx2 = np.fft.ifft(np.multiply(1j * Omega, X2))
     ddx1 = np.fft.ifft(np.multiply(-Omega**2, X1))
     ddx2 = np.fft.ifft(np.multiply(-Omega**2, X2))
-
-    R1 = (m1+m2)*l1*ddx1+m2*l2*np.cos(x[:N]-x[N:])*ddx2+m2*l2*np.sin(x[:N]-x[N:])*dx2**2+g*(m1+m2)*np.sin(x[:N])
-    R2 = m2*l2*ddx2+m2*l1*np.cos(x[:N]-x[N:])*ddx1-m2*l1*np.sin(x[:N]-x[N:])*dx2**2+g*(m2)*np.sin(x[N:]) - p
+    a = (m1+m2)*l1
+    b = m2*l2*np.cos(x1-x2)
+    c = m2*l1*np.cos(x1-x2)
+    d = m2*l2
+    e = -m2*l2*dx2**2*np.sin(x1-x2)-g*(m1+m2)*np.sin(x1)
+    f = m2*l1*dx1**2*np.sin(x1-x2)-m2*g*np.sin(x2)+p
+    R1 = a*ddx1+b*ddx2-e
+    R2 = c*ddx2+d*ddx1-f
     Residual = R1**2 + R2**2
     Residual = np.sum(np.abs((Residual)))
     return Residual
 
-# # res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
+# res = minimize(residual, x0, options={'method':'SLSQP', 'maxiter':1000000})
 res = minimize(residual, x0)
 print(residual(res.x))
 xSol = res.x
@@ -70,23 +75,23 @@ def RHS(X, t=0.0):
 ta = np.linspace(0.0, T, 20*N)
 sol = odeint(RHS, [0, 0, 0, 0], ta)
 print(sol)
-
-plt.figure()
-plt.plot(t, xSol1, 'k',
-         ta, sol[:, 0], 'r--',
-         lw=linewidth, ms=markersize)
-plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
-plt.title('theta1')
-plt.xlabel('Time')
-plt.ylabel('Displacement')
-plt.show()
 #
-plt.figure()
-plt.plot(t, xSol2, 'k',
-         ta, sol[:, 2], 'r--',
-         lw=linewidth, ms=markersize)
-plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
-plt.title('theta2')
-plt.xlabel('Time')
-plt.ylabel('Displacement')
-plt.show()
+# plt.figure()
+# plt.plot(t, xSol1, 'k',
+#          ta, sol[:, 0], 'r--',
+#          lw=linewidth, ms=markersize)
+# plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
+# plt.title('theta1')
+# plt.xlabel('Time')
+# plt.ylabel('Displacement')
+# plt.show()
+# #
+# plt.figure()
+# plt.plot(t, xSol2, 'k',
+#          ta, sol[:, 2], 'r--',
+#          lw=linewidth, ms=markersize)
+# plt.legend(['Harmonic Balance', 'Time integration'], loc='best')
+# plt.title('theta2')
+# plt.xlabel('Time')
+# plt.ylabel('Displacement')
+# plt.show()
