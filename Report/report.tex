@@ -247,13 +247,22 @@ m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  
 
 % -------------------------------------------------------------------
 \subsection{Hypersonic Flutter}
+In this work, piston theory \cite{ashley2012piston} is applied to a double-wedged lifting surface with pitching degree of freedom as shown in Figure \ref{fig:doubleWedgedAirfoil}. This work uses third-order piston theory to compute unsteady effects behind shock waves and expansion fans and a stiffening spring to the structure. This method of computing unsteady aerodynamic effects delivered highly accurate results when compared to computational fluid dynamics solutions \cite{mcnamara2011aeroelastic}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9.00cm]{figure/doubleWedgeAirfoil.png}
+	\caption{Double-wedge lifting surface.}
+	\label{fig:doubleWedgedAirfoil}
+\end{figure}
+
 The governing equation can be written as
 
 \begin{equation}\label{eq:GE}
 	m\ddot{\theta} + k \theta = f(\theta, t)
 \end{equation}
 
-where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. We used the piston theory to calculate the pressure distribution on the airfoil \cite{ashley2012piston}.
+where $m$ is the mass of airfoil, $k$ is the stiffness, $\theta$ is the angle of attack and $f$ is the aerodynamic load. We use the Piston Theory to calculate the aerodynamic load acting on the airfoil. We used the piston theory to calculate the pressure distribution on the airfoil.
 
 \begin{equation}\label{eq:pistonTheory}
 	\frac{P(x, t)}{P_\infty} = \left( 1+ \frac{\gamma - 1}{2} \frac{v_n}{a_\infty} \right)^{\frac{2 \gamma}{\gamma - 1}}
