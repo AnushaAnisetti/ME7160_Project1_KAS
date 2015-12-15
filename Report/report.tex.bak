@@ -73,7 +73,7 @@ In this report, Harmonic balance methodology is first build on closed form equat
 % ===================================================================
 \section{Numerical Approach}
 
-To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the residual function as
+To solve a general ordinary nonlinear differential using the Harmonic Balance (HB) method, we first define the governing equations in terms of a residual function as follows
 
 \begin{equation}\label{eq:GE}
 	\mathcal{R} = F(\ddot{x}, \dot{x}, x, f)
@@ -110,19 +110,20 @@ By substituting Equations \eqref{eq:displacement}, \eqref{eq:velocity}, and \eqr
 \end{figure}
 %
 
-To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method.
+To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method. This process is shown in Figure \ref{fig:flowchart}.
 
-To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
+This process can be summarized in the following bullet points
 
-Harmonic Balance algorithm is iterative and works as illustrated in \ref{fig:flowchart}.
 \begin{itemize}
-\item An initial guess for response in time domain for a particular time period discretized in required number of samples is made. In general, this assumed solution is zero values (not necessarily).
-\item The above initial conditions are then transformed into frequency domain. 
-\item Using the properties of fourier series, obtain the derivatives of the responses.
-\item Transform the derivatives back into time domain and substitute into the equations of motion.
-\item Check if the harmonics are balanced, by minimizing the cost function of the residuals from the equations of motion. 
+\item An initial guess for response in time domain.
+\item Transform the initial guess into frequency domain. 
+\item Obtain the derivatives of the responses in the frequency domain.
+\item Transform the derivatives back into time domain
+\item Minimizing the cost function of the residuals from the equations of motion 
 \item Re-iterate until minimization algorithm is below it's convergence criteria tolerance.
 \end{itemize}
+
+To verify the result of HB method, we used numerical integration to calculate the solution of Equation \eqref{eq:GE}. It should be noted that HB is capable of capturing the steady-state response of the system. Therefore, it is required to let the transient response of the time integration to die of before comparing the results. These are shown in next section.
 
 % ===================================================================
 \section{Demonstration Results}
@@ -157,6 +158,8 @@ The comparison between the HB and analytical result for Equation \eqref{eq:1GE} 
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
+
+The convergence results for the residual is shown in Figure \ref{fig:R1_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian. This Jacobian is used to define the direction the optimizer goes to update the design variables, vector $x$ in time. As can be seen here, if the simulation takes a long time to converge, the finite 2
 
 % -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}

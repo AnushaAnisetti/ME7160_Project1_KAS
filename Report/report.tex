@@ -101,14 +101,13 @@ The time derivatives are calculated by differentiating above equation with respe
 \end{subequations}
 
 By substituting Equations \eqref{eq:displacement}, \eqref{eq:velocity}, and \eqref{eq:acceleration} into Equation \eqref{eq:GE}, we can minimize the residual based on a guessed displacement. The flow chart for this is shown in Figure \ref{fig:flowchart}.
-%
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=9.00cm]{figure/minimize_residual.png}
 	\caption{Flowchart for numerical approach.}
 	\label{fig:flowchart}
 \end{figure}
-%
 
 To transfer the time domain data for frequency domain we use \texttt{numpy.fft.fft} function and for converting the frequency domain data back to time domain we used \texttt{numpy.fft.ifft}. We sampled the frequency domain using $19$ points. The initial guess for displacement is selected as a vector of ones, \texttt{numpy.ones}. It should be noted that this is a vector of displacement in time. The minimization of residual is done using python \texttt{scipy.optimize.minimize} function using \texttt{SLSQP} method. This process is shown in Figure \ref{fig:flowchart}.
 
@@ -159,6 +158,15 @@ The comparison between the HB and analytical result for Equation \eqref{eq:1GE} 
     \label{fig:R1}
 \end{figure}
 
+The convergence results for the residual is shown in Figure \ref{fig:R1_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian. This Jacobian is used to define the direction the optimizer goes to update the design variables, vector $x$ in time. As can be seen here, if the simulation takes a long time to converge, the finite difference step is going to take a significant amount of time and resources.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_31.eps}
+	\caption{Convergence plot.}
+	\label{fig:R1_convergence}
+\end{figure}
+
 % -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}
 For the second demonstration example, we looked at problem 2.45 on page 140 of Applied Nonlinear Dynamics (Nayfeh) book. The governing equation for this problem is shown in Equation \eqref{eq:2GE}
@@ -183,6 +191,15 @@ In above equation, we chose $\mu = 0.1$, $g = 9.81$, $R = 1.0$, and $\alpha = 1$
     \label{fig:R2}
 \end{figure}
 
+The convergence results for the residual is shown in Figure \ref{fig:R2_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_32.eps}
+	\caption{Convergence plot.}
+	\label{fig:R2_convergence}
+\end{figure}
+
 % -------------------------------------------------------------------
 \subsection{Parametrically excited Duffing Oscillator}
 We looked at the applicability of HB in handling the nonlinear, force, parametrically excited Duffing oscillator. The governing equation of this system is shown in Equation \eqref{eq:3GE}.
@@ -193,7 +210,7 @@ We looked at the applicability of HB in handling the nonlinear, force, parametri
 
 We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega = 2.0$ for the system parameters. Like the previous example, we used time integration to verify the results of HB method as shown in Figure \ref{fig:R3}. As seen here, similar convergence trend is observed for parametrically excited nonlinear oscillating system for different number of harmonics.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}[h]{8.0 cm}
 		\includegraphics[width=8.0 cm]{figure/3N20.eps}
@@ -206,6 +223,16 @@ We chose $\epsilon = 1.0$, $\mu = 1.0$, $\alpha = 1.0$, $k = 1.0$, and $\omega =
     \caption{Comparison between HB and analytical result.}
     \label{fig:R3}
 \end{figure}
+
+The convergence results for the residual is shown in Figure \ref{fig:R3_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.00cm]{figure/convergence_study_33.eps}
+	\caption{Convergence plot.}
+	\label{fig:R3_convergence}
+\end{figure}
+
 % -------------------------------------------------------------------
 \subsection{Double Pendulum}
 Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$ are masses and lengths of pendulum 1 and pendulum 2 respectively, then the equations of motion are
