@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  15 DEC 2015 10:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  15 DEC 2015 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,25 +307,30 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
-(./report.aux
+Package color Info: Redefining color red on input line 34.
+Package color Info: Redefining color green on input line 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+) (./report.aux
 
 LaTeX Warning: Label `eq:GE' multiply defined.
 
 )
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -379,17 +384,17 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count128
-LaTeX Font Info:    Try loading font information for U+wasy on input line 33.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
@@ -397,20 +402,20 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 File: figure/minimize_residual.png Graphic file (type png)
 
 <use figure/minimize_residual.png>
-Package pdftex.def Info: figure/minimize_residual.png used on input line 107.
+Package pdftex.def Info: figure/minimize_residual.png used on input line 122.
 (pdftex.def)             Requested size: 309.92337pt x 256.0748pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (10.34503pt too wide) in paragraph at lines 112--113
+Overfull \hbox (10.34503pt too wide) in paragraph at lines 127--128
 \OT1/cmr/m/n/10.95 and for con-vert-ing the fre-quency do-main data back to tim
 e do-main we used \OT1/cmtt/m/n/10.95 numpy.fft.ifft\OT1/cmr/m/n/10.95 .
  []
 
 
-Overfull \hbox (9.42178pt too wide) in paragraph at lines 112--113
+Overfull \hbox (9.42178pt too wide) in paragraph at lines 127--128
 \OT1/cmr/m/n/10.95 ment in time. The min-i-miza-tion of resid-ual is done us-in
 g python \OT1/cmtt/m/n/10.95 scipy.optimize.minimize
  []
@@ -424,15 +429,15 @@ Package epstopdf Info: Source file: <figure/1N19.eps>
 (epstopdf)                    size: 17640 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/1N19-eps-converted-
 to.pdf figure/1N19.eps>
-(epstopdf)             \includegraphics on input line 150.
+(epstopdf)             \includegraphics on input line 165.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/1N19-eps-converted-to.pdf, id=29, 1883.035pt x 1015.795pt>
 File: figure/1N19-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N19-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 15
-0.
+Package pdftex.def Info: figure/1N19-eps-converted-to.pdf used on input line 16
+5.
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
 Package epstopdf Info: Source file: <figure/1N30.eps>
 (epstopdf)                    date: 2015-12-03 12:36:44
@@ -442,15 +447,15 @@ Package epstopdf Info: Source file: <figure/1N30.eps>
 (epstopdf)                    size: 19291 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/1N30-eps-converted-
 to.pdf figure/1N30.eps>
-(epstopdf)             \includegraphics on input line 154.
+(epstopdf)             \includegraphics on input line 169.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/1N30-eps-converted-to.pdf, id=30, 1883.035pt x 1015.795pt>
 File: figure/1N30-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/1N30-eps-converted-to.pdf>
-Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 15
-4.
+Package pdftex.def Info: figure/1N30-eps-converted-to.pdf used on input line 16
+9.
 (pdftex.def)             Requested size: 227.62204pt x 122.78912pt.
 Package epstopdf Info: Source file: <figure/convergence_study_31.eps>
 (epstopdf)                    date: 2015-12-15 09:36:02
@@ -461,7 +466,7 @@ to.pdf>
 (epstopdf)                    size: 114885 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/convergence_study_3
 1-eps-converted-to.pdf figure/convergence_study_31.eps>
-(epstopdf)             \includegraphics on input line 165.
+(epstopdf)             \includegraphics on input line 180.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/convergence_study_31-eps-converted-to.pdf, id=31, 1280.785pt x 703.6287
@@ -469,7 +474,7 @@ Package epstopdf Info: Output file is already uptodate.
 File: figure/convergence_study_31-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/convergence_study_31-eps-converted-to.pdf>
 Package pdftex.def Info: figure/convergence_study_31-eps-converted-to.pdf used 
-on input line 165.
+on input line 180.
 (pdftex.def)             Requested size: 310.73656pt x 170.71652pt.
  [4 <./figure/1N19-eps-converted-to.pdf> <./figure/1N30-eps-converted-to.pdf> <
 ./figure/convergence_study_31-eps-converted-to.pdf>]
@@ -481,15 +486,15 @@ Package epstopdf Info: Source file: <figure/2N75.eps>
 (epstopdf)                    size: 14883 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/2N75-eps-converted-
 to.pdf figure/2N75.eps>
-(epstopdf)             \includegraphics on input line 183.
+(epstopdf)             \includegraphics on input line 198.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/2N75-eps-converted-to.pdf, id=124, 1901.1025pt x 1015.795pt>
 File: figure/2N75-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/2N75-eps-converted-to.pdf>
-Package pdftex.def Info: figure/2N75-eps-converted-to.pdf used on input line 18
-3.
+Package pdftex.def Info: figure/2N75-eps-converted-to.pdf used on input line 19
+8.
 (pdftex.def)             Requested size: 227.62204pt x 121.61115pt.
 Package epstopdf Info: Source file: <figure/2N199.eps>
 (epstopdf)                    date: 2015-12-03 12:36:44
@@ -499,15 +504,15 @@ Package epstopdf Info: Source file: <figure/2N199.eps>
 (epstopdf)                    size: 16902 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/2N199-eps-converted
 -to.pdf figure/2N199.eps>
-(epstopdf)             \includegraphics on input line 187.
+(epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/2N199-eps-converted-to.pdf, id=125, 1901.1025pt x 1015.795pt>
 File: figure/2N199-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/2N199-eps-converted-to.pdf>
-Package pdftex.def Info: figure/2N199-eps-converted-to.pdf used on input line 1
-87.
+Package pdftex.def Info: figure/2N199-eps-converted-to.pdf used on input line 2
+02.
 (pdftex.def)             Requested size: 227.62204pt x 121.61115pt.
 Package epstopdf Info: Source file: <figure/convergence_study_32.eps>
 (epstopdf)                    date: 2015-12-15 09:55:33
@@ -518,7 +523,7 @@ to.pdf>
 (epstopdf)                    size: 1223780 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/convergence_study_3
 2-eps-converted-to.pdf figure/convergence_study_32.eps>
-(epstopdf)             \includegraphics on input line 198.
+(epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/convergence_study_32-eps-converted-to.pdf, id=126, 1268.74pt x 703.6287
@@ -526,7 +531,7 @@ Package epstopdf Info: Output file is already uptodate.
 File: figure/convergence_study_32-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/convergence_study_32-eps-converted-to.pdf>
 Package pdftex.def Info: figure/convergence_study_32-eps-converted-to.pdf used 
-on input line 198.
+on input line 213.
 (pdftex.def)             Requested size: 307.81427pt x 170.71652pt.
 Package epstopdf Info: Source file: <figure/3N20.eps>
 (epstopdf)                    date: 2015-12-03 12:36:44
@@ -536,15 +541,15 @@ Package epstopdf Info: Source file: <figure/3N20.eps>
 (epstopdf)                    size: 17043 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/3N20-eps-converted-
 to.pdf figure/3N20.eps>
-(epstopdf)             \includegraphics on input line 216.
+(epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/3N20-eps-converted-to.pdf, id=127, 1899.095pt x 1015.795pt>
 File: figure/3N20-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N20-eps-converted-to.pdf>
-Package pdftex.def Info: figure/3N20-eps-converted-to.pdf used on input line 21
-6.
+Package pdftex.def Info: figure/3N20-eps-converted-to.pdf used on input line 23
+1.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
 Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    date: 2015-12-03 12:36:44
@@ -554,15 +559,15 @@ Package epstopdf Info: Source file: <figure/3N99.eps>
 (epstopdf)                    size: 18459 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/3N99-eps-converted-
 to.pdf figure/3N99.eps>
-(epstopdf)             \includegraphics on input line 220.
+(epstopdf)             \includegraphics on input line 235.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/3N99-eps-converted-to.pdf, id=128, 1899.095pt x 1015.795pt>
 File: figure/3N99-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/3N99-eps-converted-to.pdf>
-Package pdftex.def Info: figure/3N99-eps-converted-to.pdf used on input line 22
-0.
+Package pdftex.def Info: figure/3N99-eps-converted-to.pdf used on input line 23
+5.
 (pdftex.def)             Requested size: 227.62204pt x 121.75064pt.
 
 
@@ -579,7 +584,7 @@ to.pdf>
 (epstopdf)                    size: 1323423 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/convergence_study_3
 3-eps-converted-to.pdf figure/convergence_study_33.eps>
-(epstopdf)             \includegraphics on input line 231.
+(epstopdf)             \includegraphics on input line 246.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/convergence_study_33-eps-converted-to.pdf, id=218, 1268.74pt x 703.6287
@@ -587,14 +592,14 @@ Package epstopdf Info: Output file is already uptodate.
 File: figure/convergence_study_33-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/convergence_study_33-eps-converted-to.pdf>
 Package pdftex.def Info: figure/convergence_study_33-eps-converted-to.pdf used 
-on input line 231.
+on input line 246.
 (pdftex.def)             Requested size: 307.81427pt x 170.71652pt.
 
 <figure/doubleWedgeAirfoil.png, id=219, 1214.5375pt x 552.0625pt>
 File: figure/doubleWedgeAirfoil.png Graphic file (type png)
 
 <use figure/doubleWedgeAirfoil.png>
-Package pdftex.def Info: figure/doubleWedgeAirfoil.png used on input line 254.
+Package pdftex.def Info: figure/doubleWedgeAirfoil.png used on input line 269.
 (pdftex.def)             Requested size: 256.0748pt x 116.39142pt.
  [6 <./figure/3N20-eps-converted-to.pdf> <./figure/3N99-eps-converted-to.pdf> <
 ./figure/convergence_study_33-eps-converted-to.pdf>] [7 <./figure/doubleWedgeAi
@@ -607,29 +612,284 @@ Package epstopdf Info: Source file: <figure/4N9.eps>
 (epstopdf)                    size: 20889 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/4N9-eps-converted-t
 o.pdf figure/4N9.eps>
-(epstopdf)             \includegraphics on input line 340.
+(epstopdf)             \includegraphics on input line 355.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/4N9-eps-converted-to.pdf, id=324, 1899.095pt x 1015.795pt>
 File: figure/4N9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/4N9-eps-converted-to.pdf>
-Package pdftex.def Info: figure/4N9-eps-converted-to.pdf used on input line 340
+Package pdftex.def Info: figure/4N9-eps-converted-to.pdf used on input line 355
 .
 (pdftex.def)             Requested size: 341.43306pt x 182.61821pt.
- (./report.bbl) [8 <./figure/4N9-eps-converted-to.pdf>] (./report.aux)
+ [8 <./figure/4N9-eps-converted-to.pdf>]
+(./code/31.py) [9] (./code/32.py
+Overfull \hbox (2.75946pt too wide) in paragraph at lines 40--41
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.55646pt too wide) in paragraph at lines 52--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [10] (./code/33.py
+Overfull \hbox (2.75946pt too wide) in paragraph at lines 27--28
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 28--29
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.55646pt too wide) in paragraph at lines 48--49
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [11] (./code/34.py) (./code/35.py
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 29--30
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.55646pt too wide) in paragraph at lines 31--32
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.54144pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+[12]) [13] (./code/aerodynamic.py
+Overfull \hbox (78.64294pt too wide) in paragraph at lines 6--7
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (92.43994pt too wide) in paragraph at lines 7--8
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (37.25195pt too wide) in paragraph at lines 8--9
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (51.04895pt too wide) in paragraph at lines 9--10
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (126.93243pt too wide) in paragraph at lines 15--16
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (44.15045pt too wide) in paragraph at lines 44--45
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.84595pt too wide) in paragraph at lines 46--48
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[14]) [15] (./code/getShape.py
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 3--4
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.23694pt too wide) in paragraph at lines 20--21
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 21--22
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.23694pt too wide) in paragraph at lines 33--34
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 34--35
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 36--37
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.55646pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (2.75946pt too wide) in paragraph at lines 42--43
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.23694pt too wide) in paragraph at lines 46--47
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 47--48
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.35345pt too wide) in paragraph at lines 54--55
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[16]
+Overfull \hbox (16.55646pt too wide) in paragraph at lines 55--56
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 57--58
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.23694pt too wide) in paragraph at lines 59--60
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 60--61
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 62--63
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.35345pt too wide) in paragraph at lines 67--68
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (2.75946pt too wide) in paragraph at lines 68--69
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 70--71
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.65796pt too wide) in paragraph at lines 71--73
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (51.04895pt too wide) in paragraph at lines 78--79
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (51.04895pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (44.15045pt too wide) in paragraph at lines 85--86
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (85.54144pt too wide) in paragraph at lines 87--88
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 90--91
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.45496pt too wide) in paragraph at lines 92--93
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (71.74445pt too wide) in paragraph at lines 93--94
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (78.64294pt too wide) in paragraph at lines 95--96
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+) [17] (./report.bbl) [18] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5902 strings out of 494985
- 91277 string characters out of 6180356
- 160510 words of memory out of 5000000
- 9016 multiletter control sequences out of 15000+600000
+ 6371 strings out of 494985
+ 96228 string characters out of 6180356
+ 227627 words of memory out of 5000000
+ 9458 multiletter control sequences out of 15000+600000
  13389 words of font info for 50 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,10n,38p,948b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,948b,1482s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -646,10 +906,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (8 pages, 3087575 bytes).
+Output written on report.pdf (18 pages, 3116086 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 452 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

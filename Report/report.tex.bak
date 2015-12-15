@@ -28,6 +28,21 @@
 \affil[1]{Department of Mechanical and Materials Engineering, Wright State University}
 \date{} %remove date
 
+\usepackage[procnames]{listings}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+
 \begin{document}
 
 \maketitle
@@ -343,6 +358,22 @@ For verification, the harmonic balance results are compared with the numerical i
 \end{figure}
 
 % ===================================================================
+\newpage
+\section{Appendices}
+\lstinputlisting{code/31.py}
+\newpage
+\lstinputlisting{code/32.py}
+\newpage
+\lstinputlisting{code/33.py}
+\newpage
+\lstinputlisting{code/34.py}
+\newpage
+\lstinputlisting{code/main.py}
+\newpage
+\lstinputlisting{code/aerodynamic.py}
+\newpage
+\lstinputlisting{code/getShape.py}
+\newpage
 \bibliographystyle{aiaa}
 \bibliography{ref}
 \end{document}
