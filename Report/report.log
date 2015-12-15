@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  15 DEC 2015 12:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.13)  15 DEC 2015 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,16 +877,16 @@ Overfull \hbox (78.64294pt too wide) in paragraph at lines 95--96
 
  []
 
-) [17] (./report.bbl) [18] (./report.aux)
+) [17] (./code/samyuktha.m) [18] (./report.bbl) [19] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6371 strings out of 494985
- 96228 string characters out of 6180356
+ 6430 strings out of 494985
+ 96812 string characters out of 6180356
  227627 words of memory out of 5000000
- 9458 multiletter control sequences out of 15000+600000
+ 9513 multiletter control sequences out of 15000+600000
  13389 words of font info for 50 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  42i,10n,40p,948b,1482s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -906,10 +906,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (18 pages, 3116086 bytes).
+Output written on report.pdf (19 pages, 3118393 bytes).
 PDF statistics:
- 452 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 456 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
