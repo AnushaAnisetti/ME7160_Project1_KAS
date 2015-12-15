@@ -28,11 +28,11 @@ t = t[0:-1]
 p = np.sin(2*t)
 =======
 g = 32.2
-c1 = 1
-c2 = .5
+c1 = -1
+c2 = -.5
 
 N = 99
-T = 2*np.pi
+T = 3*2*np.pi
 t = np.linspace(0, T, N+1)
 t = t[0:-1]
 p = np.sin(0.2*t)
