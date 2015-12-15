@@ -250,14 +250,47 @@ The convergence results for the residual is shown in Figure \ref{fig:R3_converge
 
 % -------------------------------------------------------------------
 \subsection{Double Pendulum}
-Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$ are masses and lengths of pendulum 1 and pendulum 2 respectively, then the equations of motion are
+Adapting Harmonic balance method for a two-degree of freedom system, a double pendulum, with $\theta_1$ and $\theta_2$ DOF is considered. If $m_1$, $m_2$, $l_1$ and $l_2$,  $c_1$ and $c_2$ are masses, lengths and damping coefficients of pendulum 1 and pendulum 2 respectively, then the equations of motion are
 \begin{equation}
-(m_1+m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2} \cos( \theta_1 - \theta_2 ) + m_2  l_2 \dot{ \theta_2 }^2 \sin( \theta_1 - \theta_2 )+g (m_1+m_2)  \sin( \theta_1) = 0
+(m_1+m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2} \cos( \theta_1 - \theta_2 ) + m_2  l_2 \dot{ \theta_2 }^2 \sin( \theta_1 - \theta_2 )+(c_1+c_2) (l_1^2) \dot{\theta_1}+c_2 l_1 l_2  \dot{\theta_2}+ g (m_1+m_2)  \sin( \theta_1) = 0
 \end{equation}
 
 \begin{equation}
-m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  l_1 \dot{\theta_1}^2 \sin(\theta_1 - \theta_2)+m_2 g  \sin(\theta_2) = 0
+m_2  l_2 \ddot{\theta_2}+m_2 l_1 \ddot{\theta_1} \cos(\theta_1 - \theta_2)-m_2  l_1 \dot{\theta_1}^2 \sin(\theta_1 - \theta_2)+c_2 \dot{\theta_2}+c_2  l_1  l_2 \dot {\theta_1}+c_2 (l_2^2) \dot{\theta_2}+m_2 g  \sin(\theta_2) = \sin(\omega t)
 \end{equation}
+
+The equations of motion are written in state space form 
+
+\begin{equation}
+	\dot{u1} = u2
+\end{equation}
+
+\begin{equation}
+	\dot{u2} = \frac{ed-bf}{ad-bc}	
+\end{equation}
+\begin{equation}
+	\dot{v1} = v2 
+\end{equation}
+\begin{equation}
+	\dot{v2} = \frac{af-ce}{ad-bc}	
+\end{equation}
+
+where $a = (m_1+m_2)l_1$, $b= m_2*l_2*cos(u_1-v_1)$, $c=m_2*l_1*cos(u_1-v_1)$, $d = m_2 l_2$, $e= -m_2 l_2 v_2^2 sin(u_1-u_2)-g(m_1+m_2) sin(u_1)+(c_1+c_2) (l_1^2) u_2+c_2 l_1 l_2 v_2$ and $f = m_2 l_1 u_2^2 sin(u_1-v_1)-m_2 g sin(v_1)+ sin(\omega t)+c_2 v2+c_2 l_1 l_2 u_2+c_2 (l_2^2) v_2$
+
+The results show chaotic behaviour of the double pendulum as expected.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9.00cm]{figure/figure_1.eps}
+	\caption{Response $\theta_1$ }
+	\label{fig:theta1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9.00cm]{figure/figure_2.eps}
+	\caption{Response  $\theta_2$  }
+	\label{fig:theta2}
+\end{figure}
+
 
 
 % -------------------------------------------------------------------
@@ -357,6 +390,14 @@ For verification, the harmonic balance results are compared with the numerical i
 	\label{fig:hypersonicFlutterResult}
 \end{figure}
 
+\section{Conclusions}
+
+In this project, Harmonic balance method is applied to linear and non-linear equations. The results are compared with the time-integrated responses of these systems. Initially, linear system is solved to validate the results from Harmonic Balance method and time integrated methods and the study is extended to non-linear systems like two-dof system, parametrically oscillated system and systems with flutter responses. 
+
+Responses from linear and moderately non-linear systems using Harmonic Balance method converge to the time-integrated response in due course of time. This is because Harmonic balance method results in steady-state reponse and it is required to let the transient response of the time integration to die of before comparing the results. Taking more frequency components into account, Harmonic Balance Method provides better approximation to the response. 
+
+For some nonlinear systems that are highly non-linear and behave chaotically such as double pendulum, Harmonic Balance Method solution requires higher harmonics at the cost of computational time. Overall, Harmonic balance method is efficient in obtaining closed form steady-state solution to the non-linear equations.
+
 % ===================================================================
 \newpage
 \section{Appendices}
@@ -369,6 +410,8 @@ For verification, the harmonic balance results are compared with the numerical i
 \lstinputlisting{code/34.py}
 \newpage
 \lstinputlisting{code/35.py}
+\newpage
+\lstinputlisting{code/Pendulum.py}
 \newpage
 \lstinputlisting{code/aerodynamic.py}
 \newpage
