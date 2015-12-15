@@ -181,7 +181,23 @@ The comparison between the HB and analytical result for Equation \eqref{eq:1GE} 
     \caption{Comparison between HB and analytical result.}
     \label{fig:R1}
 \end{figure}
+% -------------------------------------------------------------------
 
+\subsection{Linear System}
+The governing equation is defined as
+\begin{equation}\label{eq:samGE}
+	\ddot{x} + x = \sin 2t
+\end{equation}
+ 
+The solution obtained from this equation can be used to compare with  the harmonic balance result. The solution for Equation \eqref{eq:samGE} is calculated as
+
+\begin{equation}
+	x(t) = -0.33 \sin 2t
+\end{equation}
+
+The following figure\ref{fig:samR1} shows the comparison results between the Harmonic Balance Method and analytical result for Equation \eqref{eq:samGE}. As it can be clearly seen, the Harmonic Balance Method results meets absolutely with analytical solution of the system.
+
+<<<<<<< HEAD
 The convergence results for the residual is shown in Figure \ref{fig:R1_convergence}. As can be seen here, the value of residual reaches zero at the end of the optimization process. The flat lines represents the finite difference steps required to calculated the Jacobian. This Jacobian is used to define the direction the optimizer goes to update the design variables, vector $x$ in time. As can be seen here, if the simulation takes a long time to converge, the finite difference step is going to take a significant amount of time and resources.
 
 \begin{figure}[h]
@@ -191,6 +207,14 @@ The convergence results for the residual is shown in Figure \ref{fig:R1_converge
 	\label{fig:R1_convergence}
 \end{figure}
 
+=======
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8.0 cm]{figure/fig1.eps}
+    \caption{Comparison between Harmonic Balance Method and analytical result.}
+    \label{fig:samR1}
+\end{figure}
+>>>>>>> origin/AnushaAnisetti-master
 % -------------------------------------------------------------------
 \subsection{Nonlinear Oscillator}
 For the second demonstration example, we looked at problem 2.45 on page 140 of Applied Nonlinear Dynamics (Nayfeh) book. The governing equation for this problem is shown in Equation \eqref{eq:2GE}
